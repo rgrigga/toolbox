@@ -1,0 +1,79 @@
+/bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock
+.DS_Store
+.idea/
+app/_ide_helpers.php
+sftp-config.json
+sftp-config*
+*.sublime-project
+*.sublime-workspace
+*.sql
+.sql
+.env.php
+.env.local.php
+.env.development.php
+.env.production.php
+
+database.php
+*database.php
+
+# $ cat .gitignore
+
+# Can ignore specific files
+#  .DS_Store
+
+# Use wildcards as well
+# *~
+# *.swp
+
+# Can also ignore all directories and files in a directory.
+@ tmp/**/* 
+
+
+
+# FROM THE BOOTSTRAP FOLKS
+# Ignore docs files
+_gh_pages
+_site
+.ruby-version
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+*~
+
+# OS or Editor folders
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+.idea
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# grunt-html-validation
+validation-status.json
+validation-report.json
+
+# Folders to ignore
+node_modules
+sql_backups
+vendor
