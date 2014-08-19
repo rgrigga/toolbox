@@ -122,8 +122,10 @@ This is the master navbar.
 
 @section('footer')
 <div class="footer">
+    <code>.footer</code>
     <div class="container">
-        <p class="muted">&copy; 2014</p>
+        <p><a href="http://rgrigga.github.io/toolbox">http://rgrigga.github.io/toolbox</a></p>
+        <p class="muted small">&copy; 2014</p>
     </div>
 </div>
 @show

@@ -8,7 +8,8 @@
     <p>A "Craft" is like an "Art", but art makes us think of things like paintings.  The focus is generally on the aesthetic side of things.  It could be argued that the intent of such aesthetics on the business side is to attract customers and/or otherwise delight users.  There is certainly an artistic aspect to web development (or any development, for that matter).</p>
     <p>Crafts generally require more tools and supplies than arts do: hammers, nails, screwdrivers, sandpaper,... glue, stain...</p>
     <p>Crafts also require <strong>specific knowledge</strong>.  Any kid can splash paint on paper and call it art, but a fine handcrafted piece of heirloom quality furniture can only be made by someone with the very best tools and a good deal of experience and knowhow.</p>
-    <p>Development is <strong>hard</strong>.  It's a worthwhile pursuit, though, and</p>
+    <p>Development is <strong>hard</strong>.  It's a worthwhile pursuit, though, and it's a great blend of problem-solving, artistic inclination, analytical thinking, and detailed knowledge of a variety of tools and languages.</p>
+    <p>Below is a description of the tools I enjoy using today:</p>
 </header>
 <hr/>
 
@@ -238,7 +239,7 @@ EOT;
     </div>
 </article>
 
-<h1>TODO: BITBUCKET</h1>
+<h2>Code Samples</h2>
 
 <article id="bitbucket">
     <div class="trigger">
@@ -251,7 +252,13 @@ EOT;
         </div>
         <h3>Public, Private, and Team Source Control</h3>
         <p>Also integrates well with JIRA</p>
-        <p>I have a few repos here, see also <a href="#github">github</a>.</p>
+
+        <ul>
+            <li><a href="vagrantServer">vagrantServer</a>Vagrant Environment/Database Managment</li>
+            <li><a href="codeigniter">CodeIgniter Demo</a></li>
+            <li><a href="codeigniter">CakePHP Demo</a>broken, no database, deployment incomplete</li>
+        </ul>
+        <p>I have a few personal projects here, and our company hosts our code here. see also <a href="#github">github</a>.</p>
     </div>
 </article>
 
@@ -598,7 +605,7 @@ EOT;
 @section('sidebar')
 <div class="sidebar">
     @if(Auth::check())
-    <code>sidebar</code>
+    <code>.sidebar</code>
     {{$profile or ""}}
     @else
     <code>.sidebar</code>
@@ -610,12 +617,5 @@ EOT;
         </p>
         <footer>Albert Einstein via <cite>@AlbertE_Quotes</cite></footer>
     </blockquote>
-</div>
-<div class="sidebar">
-
-    <div>
-
-
-    </div>
 </div>
 @stop

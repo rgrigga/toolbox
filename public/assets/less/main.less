@@ -1,0 +1,81 @@
+@import "../../assets/bower_components/bootstrap/less/bootstrap.less";
+@import url(//fonts.googleapis.com/css?family=Ubuntu:500);
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+
+pre,code{
+  font-family:'Ubuntu', sans-serif;
+  background-color: rgba(47,9,35,1);
+  color:white;
+}
+pre > code {
+  font-size: 16px;
+}
+pre{
+  padding:20px;
+}
+
+h1,h2,h3,h4{
+  font-family: 'Permanent Marker', cursive;
+}
+h1,h2,h4{
+  text-align: center;
+}
+
+header{
+  padding:10px;
+  background-color: rgba(250,250,250,.9);
+}
+h1 {
+  font-size: 56px;
+}
+h2{
+  font-size: 40px;
+}
+h2:before,h2:after{
+  content:"~";
+}
+
+
+article{
+  .make-row();
+  .trigger{
+    text-align: center;
+    margin-top: 10px;
+    .make-sm-column(3);
+    img{
+      opacity: .5;
+      margin: 0 auto;
+    }
+    .text{
+      padding-top: 5px;
+      opacity: 0;
+      text-align: center;
+    }
+  }
+  .article-content{
+    background-color: rgba(250,250,250,.7);
+    padding-top: 2em;
+    opacity: 0;
+    .make-sm-column(9);
+  }
+
+}
+aside{
+  .make-row();
+  margin:0;
+  article{
+    .make-sm-column(4);
+//    padding:5px;
+    margin-left: 8px;
+    img{
+      padding: 3em;
+    }
+  }
+}
+.sidebar{
+  background-color: #000000;
+}
+
+//main .container p{
+//  text-align: center;
+//}

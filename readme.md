@@ -1,12 +1,13 @@
 
 #Clone this:
 
+    git clone https://github.com/rgrigga/toolbox path/to/toolbox
 
 You can also clone my development vagrantServer if you like:
 
-    rgrigga/vagrantserver
+    https://github.com/rgrigga/vagrantserver
 
-Ubuntu 14.04 with php, apache, mysql,
+Ubuntu 14.04 with php, apache, mysql, phpmyadmin, bower, less, npm
 
 ## Laravel PHP Framework
 
@@ -26,9 +27,9 @@ Laravel is accessible, yet powerful, providing powerful tools needed for large, 
 
 Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
 
-### Contributing To Laravel
+### Contributing
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+Please do!  Ask me if you need help or don't know where to start.
 
 ### License
 
