@@ -99,7 +99,7 @@ class UsersController extends Controller
     }
     public function update($user)
     {
-        $user=User::findOrFail($user);
+        $user=User::find($user);
         // Validate the inputs
         $validator = Validator::make(Input::all(),$user->getUpdateRules());
 
@@ -150,7 +150,7 @@ class UsersController extends Controller
 //        dd($e2);
         if(!$user->errors()->any()) {
             // Redirect to the new user page
-            return Redirect::to('users/' . $user->id . '/edit')
+            return Redirect::to('users')
                 ->with(['success'=>"User Saved"]);
         } else {
             return Redirect::to('users/' . $user->id . '/edit')

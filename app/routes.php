@@ -11,35 +11,47 @@
 |
 */
 
-
-
 Route::get('welcome', 'HomeController@showWelcome');
-
 Route::get('home',['as'=>'home','uses'=>'HomeController@showHome']);
 Route::get('contact',['as'=>'contact','uses'=>'HomeController@showContact']);
 Route::get('about',['as'=>'about','uses'=>'HomeController@showAbout']);
 
 Route::get('test',function(){
  	return View::make('site.test');
-
 });
 
-
 //
-
 Route::model('user','User');
+Route::model('role','Role');
+Route::model('permission','Permission');
 Route::model('project','Project');
 
 Route::resource('permissions', 'AdminPermissionsController');
-Route::resource('roles', 'AdminRolesController');
 Route::resource('projects', 'ProjectsController');
 
-
-
-
-Route::group(['prefix'=>'projects','before'=>'auth'],function(){
-
+Route::get('demo',function(){
+   return View::make('demo');
 });
+
+# User Role Management
+//Route::get('roles/{role}/show', 'AdminRolesController@getShow')
+//    ->where('role', '[0-9]+');
+Route::get('roles/{role}/edit', 'AdminRolesController@getEdit')
+    ->where('role', '[0-9]+');
+//Route::post('roles/{role}/edit', 'AdminRolesController@postEdit')
+//    ->where('role', '[0-9]+');
+Route::post('roles/{role}/edit',['as'=>'roles.update','uses'=> 'AdminRolesController@postEdit'])
+    ->where('role', '[0-9]+');
+//Route::get('roles/{role}/delete', 'AdminRolesController@getDelete')
+//    ->where('role', '[0-9]+');
+//Route::post('roles/{role}/delete', 'AdminRolesController@postDelete')
+//    ->where('role', '[0-9]+');
+
+//Route::get('roles/{role}', 'AdminRolesController@show')
+//    ->where('role', '[0-9]+');
+
+//Route::controller('roles', 'AdminRolesController');
+Route::resource('roles', 'AdminRolesController');
 // Confide routes
 //Route::get('users/{user}', 'UsersController@show')
 //    ->where('user', '[0-9]+');
@@ -132,32 +144,6 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
         ->where('user', '[0-9]+');
     Route::controller('users', 'AdminUsersController');
 
-    # User Role Management
-    Route::get('roles/{role}/show', 'AdminRolesController@getShow')
-        ->where('role', '[0-9]+');
-    Route::get('roles/{role}/edit', 'AdminRolesController@getEdit')
-        ->where('role', '[0-9]+');
-    Route::post('roles/{role}/edit', 'AdminRolesController@postEdit')
-        ->where('role', '[0-9]+');
-    Route::get('roles/{role}/delete', 'AdminRolesController@getDelete')
-        ->where('role', '[0-9]+');
-    Route::post('roles/{role}/delete', 'AdminRolesController@postDelete')
-        ->where('role', '[0-9]+');
-    Route::controller('roles', 'AdminRolesController');
-
-
-    # User Permission Management
-    Route::get('roles/{role}/show', 'AdminRolesController@getShow')
-        ->where('role', '[0-9]+');
-    Route::get('roles/{role}/edit', 'AdminRolesController@getEdit')
-        ->where('role', '[0-9]+');
-    Route::post('roles/{role}/edit', 'AdminRolesController@postEdit')
-        ->where('role', '[0-9]+');
-    Route::get('roles/{role}/delete', 'AdminRolesController@getDelete')
-        ->where('role', '[0-9]+');
-    Route::post('roles/{role}/delete', 'AdminRolesController@postDelete')
-        ->where('role', '[0-9]+');
-    Route::controller('roles', 'AdminRolesController');
 
     # Company Management
     Route::get('companies/create',['as'=>'companies.create','uses'=>'AdminCompaniesController@getCreate']);
@@ -187,6 +173,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
     Route::controller('/', 'AdminBlogsController');
 
 });
+
+
 
 Route::get('admin',function(){
     $users=User::all();

@@ -50,12 +50,22 @@
 
 
 <h4>Roles</h4>
-@foreach($roles as $role)
-
+<h5>Current:</h5>
+@foreach($user->roles()->get() as $role)
 {{$role->name}}
+@endforeach
+
+<h5>All:</h5>
+@foreach($roles as $role)
+{{$role->name}}
+    @if($user->hasRole($role))
+    <i class="check">check</i>
+    @endif
 @endforeach
 <h4>Permissions</h4>
 @foreach($permissions as $perm)
-{{$perm->name}}
+    @if($user->can($perm))
+    |{{$perm->display_name}}
+    @endif
 @endforeach
 @stop

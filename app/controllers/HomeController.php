@@ -40,8 +40,8 @@ class HomeController extends BaseController {
         if(!Auth::check()){
             $this->layout->content = View::make('site.home');
         }else{
-            $this->layout->sidebar = View::make('user.profile');
-            $this->layout->content = View::make('site.home')->nest('profile','user.profile');
+            $this->layout->content = View::make('site.home');
+//                ->nest('profile','user.profile');
         }
     }
 }

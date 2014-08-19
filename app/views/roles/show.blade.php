@@ -1,30 +1,12 @@
-/home/ryan/Code/login/app/views/roles/show.blade.php
 @extends('layouts.master')
 
 @section('content')
 
-<h1>All {{Models}}</h1>
+<h1>All Roles</h1>
 
-<p>{{ link_to_route('{{models}}.create', 'Add new {{model}}') }}</p>
+<p>{{ link_to_route('roles.create', 'Add new Role') }}</p>
 
-@if (${{models}}->count())
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				{{headings}}
-			</tr>
-		</thead>
+<h2>ROle</h2>
 
-		<tbody>
-			@foreach (${{models}} as ${{model}})
-				<tr>
-					{{fields}}
-				</tr>
-			@endforeach
-		</tbody>
-	</table>
-@else
-	There are no {{models}}
-@endif
 
 @stop

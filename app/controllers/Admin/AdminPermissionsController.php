@@ -10,9 +10,10 @@ class AdminPermissionsController extends AdminController {
      */
     protected $permission;
 
-    public function __construct(Permission $permission)
+    public function __construct(Permission $permission,Role $role)
     {
         $this->permission = $permission;
+        $this->role=$role;
     }
 
     /**
@@ -82,13 +83,14 @@ class AdminPermissionsController extends AdminController {
     public function edit($id)
     {
         $permission = $this->permission->find($id);
+        $roles=Role::all();
 
         if (is_null($permission))
         {
             return Redirect::route('permissions.index');
         }
 
-        return View::make('permissions.edit', compact('permission'));
+        return View::make('permissions.edit', compact('permission','roles'));
     }
 
     /**
@@ -105,9 +107,30 @@ class AdminPermissionsController extends AdminController {
         if ($validation->passes())
         {
             $permission = $this->permission->find($id);
+
+            $roles=Input::get('roles');
+            if(empty($roles)){
+                $roles=[];
+            }
+
+//            dd($roles);
+//            $permIdArray=$this->permission->preparePermissionsForSave($perms);
+//            dd($permIdArray);
+
+//            dd($this->role->prepareRolesForSave($roles));
+            $result=$permission->roles()->sync($this->role->prepareRolesForSave($roles));
+//            $result=$role->users()->sync($this->user->prepareUsersForSave(Input::get('users')));
+
+//            dd($result);
+            // Was the role updated?
+//            if ($role->save())
+//            {
+
+            unset($input['roles']);
             $permission->update($input);
 
-            return Redirect::route('permissions.show', $id);
+
+            return Redirect::route('permissions.index', $id)->with('success','you did it!');
         }
 
         return Redirect::route('permissions.edit', $id)

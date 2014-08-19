@@ -57,4 +57,23 @@ class User extends Eloquent implements ConfideUserInterface {
     function getUpdateRules(){
         return $this->rules;
     }
+    public function prepareUsersForSave( $users )
+    {
+        $availableusers = $this->all()->toArray();
+        $preparedusers = array();
+        foreach( $users as $user => $value )
+        {
+            // If checkbox is selected
+            if( $value == '1' )
+            {
+                // If user exists
+                array_walk($availableusers, function(&$value) use($user, &$preparedusers){
+                    if($user == (int)$value['id']) {
+                        $preparedusers[] = $user;
+                    }
+                });
+            }
+        }
+        return $preparedusers;
+    }
 }

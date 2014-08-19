@@ -45,6 +45,9 @@ class AdminRolesController extends AdminController {
      *
      * @return Response
      */
+    public function index(){
+        return $this->getIndex();
+    }
     public function getIndex()
     {
         // Grab all the groups
@@ -96,7 +99,9 @@ class AdminRolesController extends AdminController {
             $this->role->save();
 
             // Save permissions
-            $this->role->perms()->sync($this->permission->preparePermissionsForSave($inputs['permissions']));
+            $this->role->perms()->sync(
+                $this->permission->preparePermissionsForSave($inputs['permissions'])
+            );
 
             // Was the role created?
             if ($this->role->id)
@@ -122,6 +127,11 @@ class AdminRolesController extends AdminController {
      * @param $id
      * @return Response
      */
+    public function show($id)
+    {
+        $role=Role::find($id);
+        return View::make('roles/show')->with(compact('role'));
+    }
     public function getShow($id)
     {
         // redirect to the frontend
@@ -133,16 +143,19 @@ class AdminRolesController extends AdminController {
      * @param $role
      * @return Response
      */
-    public function getEdit($role)
+    public function edit($role){
+        return $this->getEdit($role);
+    }
+    public function getEdit(Role $role)
     {
         if(! empty($role))
         {
-            $permissions = $this->permission->preparePermissionsForDisplay($role->perms()->get());
+            $permissions = $this->permission->preparePermissionsForDisplay($role->perms());
         }
         else
         {
             // Redirect to the roles management page
-            return Redirect::to('admin/roles')->with('error', Lang::get('admin/roles/messages.does_not_exist'));
+            return Redirect::to('roles')->with('error', Lang::get('roles/messages.does_not_exist'));
         }
 
         // Show the page
@@ -155,7 +168,11 @@ class AdminRolesController extends AdminController {
      * @param $role
      * @return Response
      */
-    public function postEdit($role)
+    public function update($role)
+    {
+        return $this->postEdit($role);
+    }
+    public function postEdit(Role $role)
     {
         // Declare the rules for the form validation
         $rules = array(
@@ -169,24 +186,46 @@ class AdminRolesController extends AdminController {
         if ($validator->passes())
         {
             // Update the role data
-            $role->name        = Input::get('name');
-            $role->perms()->sync($this->permission->preparePermissionsForSave(Input::get('permissions')));
+            $role->name = Input::get('name');
+//            dd(Input::get('permissions'));
+            $perms=Input::get('permissions');
+            if(empty($perms)){
+                $perms = [];
+            }
+//            dd($perms);
+            $permIdArray=$this->permission->preparePermissionsForSave($perms);
+//            dd($permIdArray);
+
+            $result=$role->perms()->sync($this->permission->preparePermissionsForSave($perms));
+            $result=$role->users()->sync($this->user->prepareUsersForSave(Input::get('users')));
 
             // Was the role updated?
             if ($role->save())
             {
+//                dd("success");
                 // Redirect to the role page
-                return Redirect::to('admin/roles/' . $role->id . '/edit')->with('success', Lang::get('admin/roles/messages.update.success'));
+                $success="Success!";
+                Session::flash('message','success');
+                return Redirect::to('roles/' . $role->id . '/edit')
+                    ->with('success','SUCCESS');
             }
             else
             {
+//                dd("fail");
                 // Redirect to the role page
-                return Redirect::to('admin/roles/' . $role->id . '/edit')->with('error', Lang::get('admin/roles/messages.update.error'));
+                Session::flash('message','fail');
+                return Redirect::to('roles/' . $role->id . '/edit')
+                    ->with('message', "FAIL")
+                ->with('error', "FAIL");
             }
         }
 
+        dd($validator->messages());
+
         // Form validation failed
-        return Redirect::to('admin/roles/' . $role->id . '/edit')->withInput()->withErrors($validator);
+        return Redirect::to('roles/' . $role->id . '/edit')
+               ->withInput()
+            ->withErrors($validator)->with('error', "FAIL");;
     }
 
 
@@ -221,4 +260,8 @@ class AdminRolesController extends AdminController {
             return Redirect::to('admin/roles')->with('error', Lang::get('admin/roles/messages.delete.error'));
     }
 
+//    function missingMethod($params=[])
+//    {
+//        dd($params);
+//    }
 }

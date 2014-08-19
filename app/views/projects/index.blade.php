@@ -39,6 +39,7 @@
 	There are no projects.
 @endif
 
+@if(Auth::user()->can('manage_projects'))
 <h2>Global Projects</h2>
 
 @if ($projects->count())
@@ -72,6 +73,7 @@
 </table>
 @else
 There are no User Projects.
+@endif
 @endif
 
 @stop

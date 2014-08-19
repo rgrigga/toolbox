@@ -20,7 +20,13 @@
     <tbody>
     @foreach ($roles as $role)
     <tr>
-        <td>Edit/Delete</td>
+        <td>
+            <p>
+                {{ link_to_route('roles.edit', 'Edit',$role->id) }}
+                |
+                {{ link_to_route('roles.destroy', 'Delete',$role->id) }}
+            </p>
+        </td>
         <td>{{$role->name}}</td>
         <td>{{implode(',',$role->perms()->lists('name'))}}</td>
         <td>{{implode(',',$role->users()->lists('username'))}}</td>

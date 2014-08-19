@@ -40,7 +40,7 @@
                     <?= link_to_action('AdminUsersController@getIndex','Users') ?>
                 </li>
                 <li class="nav-item {{ (Route::currentRouteName()=='roles') ? 'active' : '' }}">
-                    <?= link_to_action('AdminRolesController@getIndex','Roles') ?>
+                    <?= link_to_action('roles.index','Roles') ?>
                 </li>
                 <li class="nav-item {{ (Route::currentRouteName()=='perms') ? 'active' : '' }}">
                     <?= link_to_route('permissions.index','Perms') ?>

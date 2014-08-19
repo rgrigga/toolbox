@@ -1,3 +1,13 @@
+
+#Clone this:
+
+
+You can also clone my development vagrantServer if you like:
+
+    rgrigga/vagrantserver
+
+Ubuntu 14.04 with php, apache, mysql,
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
