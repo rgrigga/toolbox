@@ -3,28 +3,27 @@
 @section('content')
 
 <h1>Create project</h1>
-
+<p>After it's been created, you'll be able to enter pictures and more.</p>
 {{ Form::open(['route' => 'projects.store']) }}
 
     <div class="form-group">
         {{ Form::label('name','Name') }}
-        {{ Form::text('name',null,['class'=>'form-control']) }}
+        {{ Form::text('name',"MyApp",['class'=>'form-control']) }}
     </div>
     <div class="form-group">
         {{ Form::label('link','Link') }}
-        {{ Form::text('link',null,['class'=>'form-control']) }}
+        <p><b>example:</b> myapp.com</p>
+        {{ Form::text('link','myapp.com',['class'=>'form-control']) }}
     </div>
+
     <div class="form-group">
         {{ Form::label('owner','Owner') }}
-        {{ Form::select('owner',$users,['class'=>'form-control']) }}
-    </div>
-    <div class="form-group">
-        {{ Form::label('votes','Votes') }}
-        {{ Form::text('votes',null,['class'=>'form-control']) }}
+        {{ Form::select('owner',$users,(Auth::user()->id)?:"0",['class'=>'form-control']) }}
     </div>
     <div class="form-group">
         {{ Form::label('description','Description') }}
-        {{ Form::textarea('description',null,['class'=>'form-control']) }}
+        <p>Keep it short and sweet.</p>
+        {{ Form::textarea('description',"This is an awesome thing.",['class'=>'form-control']) }}
     </div>
     <div class="form-group">
         {{ Form::submit('Submit', array('class' => 'btn')) }}

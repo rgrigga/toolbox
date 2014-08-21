@@ -100,4 +100,12 @@ public function pages(){
 	public function directory(){
 		return "assets/".strtolower($this->brand)."/";
 	}
+    function brand()
+    {
+        return $this->brand;
+    }
+    function twitter()
+    {
+        return '@'.$this->twitter;
+    }
 }

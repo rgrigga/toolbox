@@ -23,8 +23,11 @@ class ProjectsController extends \BaseController {
 	 */
 	public function create()
 	{
+        $companies = Company::all()->lists('name','id');
+        $users = User::all()->lists('username','id');
+        $owner = Auth::user()->id;
 
-		return View::make('projects.create');
+        return View::make('projects.create', compact('users','companies','owner'));
 	}
 
 	/**
@@ -55,6 +58,7 @@ class ProjectsController extends \BaseController {
 	public function show($id)
 	{
 		$project = Project::findOrFail($id);
+
 
 		return View::make('projects.show', compact('project'));
 	}
@@ -91,9 +95,25 @@ class ProjectsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
+        if (Input::hasFile('screen'))
+        {
+            $destinationPath=public_path().DIRECTORY_SEPARATOR."project";
+            $file=Input::file('screen');
+            $fileName=$file->getClientOriginalName();
+            $file->move($destinationPath,$fileName);
+//            $data['path']=$destinationPath;
+            $screen=new Screenshot([
+                'path'=>"project/".$fileName,
+                'caption'=>$project->name,
+            ]);
+            $project->screenshots()->save($screen);
+            //
+        }
+
+        unset($data['screen']);
 		$project->update($data);
 
-		return Redirect::route('projects.index');
+		return Redirect::route('projects.index')->with('success','SUCCESS!');
 	}
 
 	/**

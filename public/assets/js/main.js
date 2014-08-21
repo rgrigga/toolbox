@@ -55,4 +55,15 @@ $('document').ready(function(){
     $('#example').popover({
         template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
     });
+
+    $('#loginbutton').popover({
+        template: '' +
+            '<div class="popover" role="tooltip">' +
+                '<div class="arrow"></div>' +
+                '<h3 class="popover-title"></h3>' +
+                '<div class="popover-content"></div>' +
+            '</div>'
+    });
+
+    $('pre').addClass('prettyprint');
 });

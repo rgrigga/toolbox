@@ -81,5 +81,3 @@ $familyName=(array_key_exists('familyName',$profile['entry']['0']['name']))?
 
 @stop
 
-@section('footer')
-@stop

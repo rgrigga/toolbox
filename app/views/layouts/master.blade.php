@@ -4,12 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>All About YOU</title>
-<!--    {{HTML::style('assets/bower_components/bootstrap/css/bootstrap.less');}}-->
+    <title>
+
+    </title>
+
+    @section('styles')
+    <!--    {{HTML::style('assets/bower_components/bootstrap/css/bootstrap.less');}}-->
     {{HTML::style('assets/less/main.less',['rel'=>'stylesheet/less','type'=>'text/css']);}}
     {{HTML::style('assets/bower_components/fontawesome/css/font-awesome.css');}}
-    {{HTML::style('assets/css/general.css');}}
-    {{HTML::style('assets/css/stickyfooter.css');}}
+<!--    {{HTML::style('assets/css/general.css');}}-->
+<!--    {{HTML::style('assets/css/stickyfooter.css');}}-->
 
     {{HTML::script('assets/bower_components/jquery/dist/jquery.min.js');}}
     {{HTML::script('assets/bower_components/bootstrap/dist/js/bootstrap.min.js');}}
@@ -17,6 +21,10 @@
     {{HTML::script('assets/bower_components/bootstrap/js/popover.js');}}
     {{HTML::script('assets/bower_components/less/dist/less-1.7.4.min.js');}}
 
+    {{HTML::style('assets/less/login.less',['rel'=>'stylesheet/less','type'=>'text/css']);}}
+
+    @show
+    @section('topscripts')
     <script type="text/javascript">
         less.env = "development";
         less.watch();
@@ -27,6 +35,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    @show
 </head>
 <body>
 
@@ -64,13 +73,11 @@ try{
     $background = $default;
     $str="";
 }
-$imgUrl=asset('assets/img/Five_petal_flower_icon.svg');
 
+//$imgUrl=asset('assets/img/Five_petal_flower_icon.svg');
+$imgUrl=$default;
 ?>
 <style>
-    table.table-bordered{
-        border: 20px solid #8D8D8D;
-    }
     body{
         background: url({{$imgUrl}}) no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -78,40 +85,29 @@ $imgUrl=asset('assets/img/Five_petal_flower_icon.svg');
         -o-background-size: cover;
         background-size: cover;
     }
-    #body-wrap{
-        /*position: fixed;*/
-        /*top:0;*/
-        /*left: 0;*/
-        height: 100%;
-        width: 100%;
-        background-color:rgba(200, 200, 200, 0.7);
-    }
-    /*.img-wrap > img{*/
-    /*position: fixed;*/
-    /*top:0;*/
-    /*left:0;*/
-    /*width: 100%;*/
-    /*}*/
+
 </style>
-@include('site.nav')
 @section('navbar')
-This is the master navbar.
+@include('site.nav')
+
 @show
 
 @section('admin-nav')
-@if(Auth::check())
-@if(Auth::user()->hasRole('Administrator'))
-<h1>Admin nav</h1>
+@if(Auth::check() && Auth::user()->hasRole('Administrator'))
+<!--<h1>Admin nav</h1>-->
 @include('admin.nav')
 @endif
-@endif
+
 
 @show
 <div id="body-wrap" class="container">
-<main>
-    @yield('content')
-    @yield('main')
-</main>
+    @include('site.partials.notifications')
+
+    <main>
+        @yield('page-header')
+        @yield('content')
+        @yield('main')
+    </main>
 </div>
 
 @section('sidebar')
@@ -120,16 +116,17 @@ This is the master navbar.
 
 <!--<code>layouts.master</code>-->
 
-@section('footer')
-<div class="footer">
-    <code>.footer</code>
-    <div class="container">
+<div class="footer container">
+<!--    <code>.footer</code>-->
+    @section('footer')
         <p><a href="http://rgrigga.github.io/toolbox">http://rgrigga.github.io/toolbox</a></p>
-        <p class="muted small">&copy; 2014</p>
-    </div>
+        <p class="muted small">&copy; 2014 {{App::make('company')->brand;}}</p>
+        <p><?= link_to_route('admin.index','Admin') ?></p>
+    @show
 </div>
-@show
 
+@section('script')
 {{HTML::script('assets/js/main.js');}}
+@show
 </body>
 </html>

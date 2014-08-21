@@ -2,7 +2,6 @@
 $prefix=(Auth::user())?Auth::user()->username . "@" : "";
 ?>
 
-
 @section('navbar')
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
@@ -14,7 +13,7 @@ $prefix=(Auth::user())?Auth::user()->username . "@" : "";
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{{$prefix}}gristech.com</a>
+            <a class="navbar-brand" href="/">{{$prefix}}gristech.com</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,46 +21,39 @@ $prefix=(Auth::user())?Auth::user()->username . "@" : "";
 
             <ul class="nav navbar-nav">
 
+                @foreach(explode(',',($company->menus)?:'about') as $menu)
+                <li class="nav-item {{ (Route::currentRouteName()==strtolower(trim($menu))) ? 'active' : '' }}">
+                    <?= link_to_route(strtolower(trim($menu)),ucfirst(trim($menu))) ?>
+                </li>
+                @endforeach
                 @if(Auth::check())
-                <li>
-                    <a href="/">/</a>
-                </li>
-                <li class="nav-item {{ (Route::currentRouteName()=='home') ? 'active' : '' }}">
-                    <?= link_to_route('home','Home') ?>
-                </li>
-                <li class="nav-item {{ (Route::currentRouteName()=='about') ? 'active' : '' }}">
-                    <?= link_to_route('about','About') ?>
-                </li>
-                <li class="nav-item {{ (Route::currentRouteName()=='contact') ? 'active' : '' }}">
-                    <?= link_to_action('HomeController@showContact','Contact') ?>
-                </li>
 
-
-<!--                <li class="active"><a href="#">Link</a></li>-->
-<!--                <li><a href="#">Link</a></li>-->
-<!--                <li class="dropdown">-->
-<!--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>-->
-<!--                    <ul class="dropdown-menu" role="menu">-->
-<!--                        <li><a href="#">Action</a></li>-->
-<!--                        <li><a href="#">Another action</a></li>-->
-<!--                        <li><a href="#">Something else here</a></li>-->
-<!--                        <li class="divider"></li>-->
-<!--                        <li><a href="#">Separated link</a></li>-->
-<!--                        <li class="divider"></li>-->
-<!--                        <li><a href="#">One more separated link</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
                 @endif
-            </ul>
 
+                {{$navcontact}}
+
+            </ul>
+            <?php
+
+            //                    dd($company);
+//            echo View::make('site.partials.navbar-contact',compact('company'));
+            ?>
+            <p class="navbar-text">
+
+            </p>
             <ul class="nav navbar-nav navbar-right">
 
+                <li>
+
+
+
+                </li>
                 @if(!Auth::check())
-                <li class="nav-item {{ (Route::currentRouteName()=='login') ? 'active' : '' }}">
-                    <?= link_to_route('login','Login') ?>
+                <li id="#loginbutton" data-container="body" data-toggle="popover" data-title="more thoughts" data-content="Login!" class="nav-item {{ (Route::currentRouteName()=='login') ? 'active' : '' }}">
+                    <?= (!in_array(Route::currentRouteName(),['register','login'])) ? link_to_route('login','Login') : '' ?>
                 </li>
                 <li class="nav-item {{ (Route::currentRouteName()=='login') ? 'active' : '' }}">
-                    <?= link_to_route('signup','Register') ?>
+                    <?= (!in_array(Route::currentRouteName(),['register','login'])) ? link_to_route('signup','Register') : '' ?>
                 </li>
                 @else
                 <li class="nav-item {{ (Route::currentRouteName()=='projects') ? 'active' : '' }}">

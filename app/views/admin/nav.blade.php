@@ -1,12 +1,8 @@
 @section('admin-nav')
 
 <style>
-    .navbar-secondary{
-        background-color: black;
-        margin-top: 50px;
-    }
     body > .container{
-        padding-top: 110px;
+        padding-top: 110px !important;
     }
 </style>
 <nav class="navbar navbar-default navbar-fixed-top navbar-secondary" role="navigation">
@@ -27,13 +23,13 @@
 
             <ul class="nav navbar-nav">
 
-                <li class="nav-item {{ (Route::currentRouteName()=='companies') ? 'active' : '' }}">
+                <li class="nav-item {{ (Route::currentRouteName()=='admin.index') ? 'active' : '' }}">
                     <?= link_to_route('admin.index','Dashboard') ?>
                 </li>
-                <li ">
+                <li class="nav-item {{ (Route::currentRouteName()=='companies.index') ? 'active' : '' }}">
                     <?= link_to_route('companies.index','Companies') ?>
                 </li>
-                <li class="nav-item {{ (Route::currentRouteName()=='projects') ? 'active' : '' }}">
+                <li class="nav-item {{ (Route::currentRouteName()=='projects.index') ? 'active' : '' }}">
                     <?= link_to_route('projects.index','Projects') ?>
                 </li>
                 <li class="nav-item {{ (Route::currentRouteName()=='users') ? 'active' : '' }}">

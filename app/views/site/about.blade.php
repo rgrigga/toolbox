@@ -1,3 +1,5 @@
+@extends('layouts.master')
+
 @section('content')
 <h1>About Ryan</h1>
 <?php
@@ -18,5 +20,9 @@ $grav="http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) )
         </div>
     </div>
 </div>
+@stop
 
+@section('footer')
+fooot
+@parent
 @stop

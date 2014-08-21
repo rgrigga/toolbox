@@ -20,6 +20,7 @@
 
 
 
+
 <h1>There are <span class="bam">
     {{$companies->count()}}
 </span>Active Companies</h1>

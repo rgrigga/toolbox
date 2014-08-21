@@ -2,6 +2,8 @@
 class AdminController extends BaseController {
 
     // private $company;
+    protected $layout = 'layouts.master';
+
     /**
      * Initializer.
      *

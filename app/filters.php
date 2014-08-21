@@ -52,6 +52,15 @@ Route::filter('auth', function()
 Route::when('admin*', 'auth');
 Route::when('projects*', 'auth');
 
+Entrust::routeNeedsRole( 'admin/advanced*', 'Owner', Redirect::to('/home') );
+
+//Entrust::routeNeedsRole( 'admin*', 'Administrator',Redirect::to(URL::previous())->with('message','Only Administrators can do that.'));
+Entrust::routeNeedsRole( 'admin*', 'Administrator',Redirect::to('/home'));
+Entrust::routeNeedsRole( 'roles', 'Administrator',"You may not be an Administrator.");
+Entrust::routeNeedsRole( 'permissions', 'Administrator',"You may not be an Administrator.");
+//Entrust::routeNeedsRole( 'admin*', 'Administrator');
+
+
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();

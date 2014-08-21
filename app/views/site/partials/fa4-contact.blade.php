@@ -1,7 +1,11 @@
 <!-- @ section('contact') -->
 <div class="iconbar" id="contact">
-<!-- 	<div class="iconbutton">
-	
+
+
+    <!-- 	<div class="iconbutton">
+
+
+
 	</div> -->
     <span>Contact:</span>
     <a href="mailto:{{$company->email}}">

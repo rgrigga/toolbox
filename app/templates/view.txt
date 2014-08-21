@@ -1,30 +1,46 @@
-$PATH$
+<!-- $PATH$ -->
 @extends('layouts.master')
 
 @section('content')
 
-<h1>All {{Models}}</h1>
+<h1>Create screenshot</h1>
 
-<p>{{ link_to_route('{{models}}.create', 'Add new {{model}}') }}</p>
+{{ Form::open(['route' => 'screenshots.store']) }}
 
-@if (${{models}}->count())
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				{{headings}}
-			</tr>
-		</thead>
+<div class="form-group">
+    {{ Form::label('name','Name') }}
+    {{ Form::text('name',null,['class'=>'form-control']) }}
+</div>
+<div class="form-group">
+    {{ Form::label('link','Link') }}
+    {{ Form::text('link',null,['class'=>'form-control']) }}
+</div>
 
-		<tbody>
-			@foreach (${{models}} as ${{model}})
-				<tr>
-					{{fields}}
-				</tr>
-			@endforeach
-		</tbody>
-	</table>
-@else
-	There are no {{models}}
+<div class="form-group">
+    {{ Form::label('votes','Votes') }}
+    {{ Form::text('votes',null,['class'=>'form-control']) }}
+</div>
+<div class="form-group">
+    {{ Form::label('description','Description') }}
+    {{ Form::textarea('description',null,['class'=>'form-control']) }}
+</div>
+<div class="form-group">
+    {{ Form::submit('Submit', array('class' => 'btn')) }}
+</div>
+
+{{ Form::close() }}
+
+@if ($errors->any())
+<ul>
+    {{ implode('', $errors->all('<li class="error">:message</li>')) }}
+</ul>
 @endif
+
+<div>
+    <h4>Existing screenshots:</h4>
+    @foreach(Screenshot::all() as $p)
+    <li>{{$p->name}}</li>
+    @endforeach
+</div>
 
 @stop

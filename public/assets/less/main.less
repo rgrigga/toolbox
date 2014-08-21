@@ -1,10 +1,13 @@
 @import "../../assets/bower_components/bootstrap/less/bootstrap.less";
+@import "../../assets/less/colors.less";
 @import url(//fonts.googleapis.com/css?family=Ubuntu:500);
 @import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
 
+@white:rgba(250,250,250,1);
+@white:@clouds;
 pre,code{
   font-family:'Ubuntu', sans-serif;
-  background-color: rgba(47,9,35,1);
+  background-color: rgba(47,9,35,1) !important;
   color:white;
 }
 pre > code {
@@ -12,6 +15,16 @@ pre > code {
 }
 pre{
   padding:20px;
+}
+
+#body-wrap{
+  /*position: fixed;*/
+  /*top:0;*/
+  /*left: 0;*/
+  min-height: 800px;
+  height: 100%;
+  width: 100%;
+  background-color:rgba(200, 200, 200, 0.7);
 }
 
 h1,h2,h3,h4{
@@ -79,3 +92,117 @@ aside{
 //main .container p{
 //  text-align: center;
 //}
+
+ul.contact-nav{
+  li{
+    a{
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+  }
+}
+img.thumb{
+  max-height: 80px;
+  max-width: 80px;
+}
+img.thumb-sm{
+  max-height: 100px;
+  max-width: 100px;
+}
+img.thumb-md{
+  max-height: 200px;
+  max-width: 200px;
+}
+img.thumb-lg{
+  max-height: 400px;
+  max-width: 400px;
+}
+
+
+body > .container {
+  padding-top: 60px;
+}
+.navbar-secondary{
+  background-color: black;
+  margin-top: 50px;
+  color: @white;
+
+  ul.nav li.nav-item {
+    a{
+      text-decoration:none;
+//      color:@white;
+    }
+    /* unvisited link */
+    a:link {
+      //  color: lemonchiffon;
+//      color:@white;
+
+    }
+    /* mouse over link */
+    a:hover {
+        color: orange;
+//      color:@white;
+
+    }
+    /* selected link */
+    a:active {
+//        color: azure;
+    }
+    /* visited link */
+    a:visited {
+//        color: blueviolet;
+//      color:@white;
+
+    }
+  }
+}
+
+ul.nav li.nav-item {
+//  text-decoration:none;
+//  color:@white;
+  a{
+    text-decoration:none;
+    //      color:@white;
+  }
+  /* unvisited link */
+  a:link {
+
+    //  color: lemonchiffon;
+    //      color:@white;
+
+  }
+  /* mouse over link */
+  a:hover {
+    text-decoration:underline;
+
+    //      color:@white;
+
+  }
+  /* selected link */
+  a:active {
+    //        color: azure;
+  }
+  /* visited link */
+  a:visited {
+    //        color: blueviolet;
+    //      color:@white;
+
+  }
+
+}
+
+#remember{
+ margin-left: 1em;
+}
+#loginform{
+  .make-row();
+}
+.formwrap{
+  .make-sm-column(6);
+  .make-sm-column-offset(3);
+  margin-bottom: 50px;
+}
+
+table.table-bordered{
+  border: 20px solid #8D8D8D;
+}

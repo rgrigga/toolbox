@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -20,16 +20,15 @@
 		<tbody>
 			@foreach ($userProjects as $project)
 				<tr>
-                    <td>{{$project->owner}}</td>
+                    <td>{{$project->owner()->username}}</td>
                     <td>{{$project->name}}</td>
                     <td>{{$project->link}}</td>
 				    <td>
                         <p>
-                            {{ link_to_route('projects.edit', 'Edit Project',$project->id) }}
-                       |
-                            {{ link_to_route('projects.destroy', 'Delete Project',$project->id) }}
+                            {{ link_to_route('projects.show', 'View',$project->id,['class'=>'btn btn-info']) }}
+                            {{ link_to_route('projects.edit', 'Edit',$project->id,['class'=>'btn btn-info']) }}
+                            {{ link_to_route('projects.destroy', 'Delete',$project->id,['class'=>'btn btn-danger']) }}
                         </p>
-
                     </td>
                 </tr>
 			@endforeach
@@ -57,13 +56,16 @@
     @foreach ($projects as $project)
     <tr>
         <td>{{$project->owner}}</td>
-        <td>{{$project->name}}</td>
+        <td>
+            <div>{{$project->name}}</div>
+        </td>
         <td>{{$project->link}}</td>
         <td>
             <p>
-                {{ link_to_route('projects.edit', 'Edit Project',$project->id) }}
-                |
-                {{ link_to_route('projects.destroy', 'Delete Project',$project->id) }}
+                {{ link_to_route('projects.show', 'View',$project->id,['class'=>'btn btn-info']) }}
+                {{ link_to_route('projects.edit', 'Edit',$project->id,['class'=>'btn btn-info']) }}
+                {{ link_to_route('projects.destroy', 'Delete',$project->id,['class'=>'btn btn-info']) }}
+
             </p>
 
         </td>
@@ -74,6 +76,9 @@
 @else
 There are no User Projects.
 @endif
+
+@else
+You do not have Permission to view the global project index.
 @endif
 
 @stop

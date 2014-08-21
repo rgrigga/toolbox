@@ -60,7 +60,9 @@ class UsersController extends Controller
     }
     public function create()
     {
-        return View::make(Config::get('confide::signup_form'));
+        return View::make('site.signup')
+            ->nest('form',Config::get('confide::signup_form'))
+            ->nest('companyinfo','company.about');
     }
 
     /**
@@ -169,7 +171,10 @@ class UsersController extends Controller
         if (Confide::user()) {
             return Redirect::to('/');
         } else {
-            return View::make(Config::get('confide::login_form'));
+            return View::make('site.login')
+                ->nest('loginform',Config::get('confide::login_form'))
+                ->nest('security','site.pages.security')
+                ->nest('companyinfo','company.about');
         }
     }
 

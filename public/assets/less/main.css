@@ -5902,7 +5902,9 @@ button.close {
 article:before,
 article:after,
 aside:before,
-aside:after {
+aside:after,
+#loginform:before,
+#loginform:after {
   content: " ";
   display: table;
 }
@@ -5922,7 +5924,8 @@ aside:after {
 .panel-body:after,
 .modal-footer:after,
 article:after,
-aside:after {
+aside:after,
+#loginform:after {
   clear: both;
 }
 .center-block {
@@ -6174,7 +6177,7 @@ aside:after {
 pre,
 code {
   font-family: 'Ubuntu', sans-serif;
-  background-color: #2f0923;
+  background-color: #2f0923 !important;
   color: white;
 }
 pre > code {
@@ -6182,6 +6185,15 @@ pre > code {
 }
 pre {
   padding: 20px;
+}
+#body-wrap {
+  /*position: fixed;*/
+  /*top:0;*/
+  /*left: 0;*/
+  min-height: 800px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(200, 200, 200, 0.7);
 }
 h1,
 h2,
@@ -6273,4 +6285,84 @@ aside article img {
 }
 .sidebar {
   background-color: #000000;
+}
+ul.contact-nav li a {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+img.thumb {
+  max-height: 80px;
+  max-width: 80px;
+}
+img.thumb-sm {
+  max-height: 100px;
+  max-width: 100px;
+}
+img.thumb-md {
+  max-height: 200px;
+  max-width: 200px;
+}
+img.thumb-lg {
+  max-height: 400px;
+  max-width: 400px;
+}
+body > .container {
+  padding-top: 60px;
+}
+.navbar-secondary {
+  background-color: black;
+  margin-top: 50px;
+  color: #ecf0f1;
+}
+.navbar-secondary ul.nav li.nav-item {
+  /* unvisited link */
+  /* mouse over link */
+  /* selected link */
+  /* visited link */
+}
+.navbar-secondary ul.nav li.nav-item a {
+  text-decoration: none;
+}
+.navbar-secondary ul.nav li.nav-item a:hover {
+  color: orange;
+}
+ul.nav li.nav-item {
+  /* unvisited link */
+  /* mouse over link */
+  /* selected link */
+  /* visited link */
+}
+ul.nav li.nav-item a {
+  text-decoration: none;
+}
+ul.nav li.nav-item a:hover {
+  text-decoration: underline;
+}
+#remember {
+  margin-left: 1em;
+}
+#loginform {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.formwrap {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .formwrap {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .formwrap {
+    margin-left: 25%;
+  }
+}
+table.table-bordered {
+  border: 20px solid #8D8D8D;
 }

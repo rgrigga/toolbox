@@ -1,4 +1,9 @@
 <?php
+Route::pattern('id', '[0-9]+');
+//Route::matched(function($route, $request)
+//{
+//    //
+//});
 
 /*
 |--------------------------------------------------------------------------
@@ -11,10 +16,32 @@
 |
 */
 
+
+
+App::bind('company',function($app){
+    return Company::where('name','like','gristech')->first();
+});
+App::bind('gristech',function($app){
+    return Company::where('name','like','gristech')->first();
+});
+
+View::share('company',Company::where('name','like','gristech')->first());
+
+View::composer('site.nav', function($view)
+{
+    $view->nest('navcontact', 'site.partials.navbar-contact-dropdown');
+});
+
+
 Route::get('welcome', 'HomeController@showWelcome');
 Route::get('home',['as'=>'home','uses'=>'HomeController@showHome']);
+Route::get('code',['as'=>'code','uses'=>'HomeController@showCode']);
 Route::get('contact',['as'=>'contact','uses'=>'HomeController@showContact']);
 Route::get('about',['as'=>'about','uses'=>'HomeController@showAbout']);
+
+Route::get('demo',function(){
+    return View::make('demo');
+});
 
 Route::get('test',function(){
  	return View::make('site.test');
@@ -28,11 +55,11 @@ Route::model('project','Project');
 
 Route::resource('permissions', 'AdminPermissionsController');
 Route::resource('projects', 'ProjectsController');
+Route::resource('screenshots', 'ScreenshotsController');
 
-Route::get('demo',function(){
-   return View::make('demo');
-});
-
+Route::get('projects',['as'=>'projects','uses'=>'ProjectsController@index']);
+Route::get('projects/{project}/edit', 'ProjectsController@edit')
+    ->where('project', '[0-9]+');
 # User Role Management
 //Route::get('roles/{role}/show', 'AdminRolesController@getShow')
 //    ->where('role', '[0-9]+');
@@ -182,6 +209,23 @@ Route::get('admin',function(){
     $projects=Project::all();
 //    View::share($projects);
     return View::make('admin.index')->with(compact('users','sites','projects'));
+});
+
+Route::any('{tag}',function($tag){
+
+    ?>
+    <script type="text/JavaScript">
+        <!--
+        setTimeout("location.href = 'http://login.dev';",1500);
+        -->
+    </script>
+    <?php
+    echo "<br>oops, your request for \"".$tag."\" has not been found.";
+    echo "<br>";
+    echo Redirect::intended('home');
+
+
+
 });
 
 Route::get('/', function()

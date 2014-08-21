@@ -12,7 +12,26 @@ class Project extends \Eloquent {
 
     public function owner()
     {
-        return $this->belongsTo('User','owner','user_id');
+//        $this->belongsTo('User','owner','id');
+        return $this->belongsTo('User','owner')->first();
     }
 
+    public function screenshots()
+    {
+        return $this->hasMany('Screenshot');
+    }
+    function image($format='')
+    {
+        $img=$this->hasOne('Screenshot','id','image')->first();
+
+        if(empty($img)){
+            return 'please provide an image';
+        }
+        return '<img class="thumbnail" src="'.asset($img->path).'" alt="'.$img->caption.'"/>';
+
+
+//        dd($this->image);
+//        dd($this->screenshots()->findOrFail($this->image));
+//        return $this->screenshots()->find();
+    }
 }

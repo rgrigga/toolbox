@@ -1,7 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 @section('content')
 <h1>Admin</h1>
 <h2>{{ link_to_route('user.index', 'Users') }}</h2>
+{{ link_to('admin/users/create', 'Add One') }}
 <ul>
     @foreach(User::all() as $u)
     <li>{{$u->username}}</li>
@@ -9,17 +10,22 @@
 </ul>
 
 <h2>{{ link_to_route('projects.index', 'Projects') }}</h2>
+{{ link_to('admin/projects/create', 'Add One') }}
 <ul>
     @foreach($projects as $p)
-    <li>{{$p->name}}</li>
+    <li>{{$p->name}}{{ link_to('projects/'.$p->id.'/edit', 'Add One') }}
+    </li>
     @endforeach
 </ul>
 
-<h2>{{ link_to('companies', 'Companies') }}</h2>
+<h2>{{ link_to('companies.index', 'Companies') }}</h2>
+
+{{ link_to('admin/companies/create', 'Add One') }}
 <ul>
-    @if(!$companies)
+    <?php $companies=Company::all(); ?>
+
+    @if(empty($companies))
     <li>There are no companies</li>
-    <li>{{ link_to('admin/companies/create', 'Add One') }}</li>
     @else
     @foreach($companies as $c)
     <li>{{$c->name}}</li>
