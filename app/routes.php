@@ -19,14 +19,23 @@ Route::pattern('id', '[0-9]+');
 
 
 //UNCOMMENT THESE LATER:
-//App::bind('company',function($app){
-//    return Company::where('name','like','gristech')->first();
-//});
+try{
+    $company=Company::where('name','like','gristech')->first();
+}catch(\Exception $e){
+    //do nothing
+//    echo $e->getMessage();
+//    exit;
+}
+    App::bind('company',function($app){
+        return Company::where('name','like','gristech')->first();
+    });
+
+
 //App::bind('gristech',function($app){
 //    return Company::where('name','like','gristech')->first();
 //});
 //
-//View::share('company',Company::where('name','like','gristech')->first());
+View::share('company',Company::where('name','like','gristech')->first());
 
 View::composer('site.nav', function($view)
 {
