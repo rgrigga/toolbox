@@ -18,14 +18,15 @@ Route::pattern('id', '[0-9]+');
 
 
 
-App::bind('company',function($app){
-    return Company::where('name','like','gristech')->first();
-});
-App::bind('gristech',function($app){
-    return Company::where('name','like','gristech')->first();
-});
-
-View::share('company',Company::where('name','like','gristech')->first());
+//UNCOMMENT THESE LATER:
+//App::bind('company',function($app){
+//    return Company::where('name','like','gristech')->first();
+//});
+//App::bind('gristech',function($app){
+//    return Company::where('name','like','gristech')->first();
+//});
+//
+//View::share('company',Company::where('name','like','gristech')->first());
 
 View::composer('site.nav', function($view)
 {
