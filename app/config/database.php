@@ -1,5 +1,18 @@
 <?php
 
+echo "This is an example file.  To prepare this file for production, 
+you should remove it from your branch of the VCS,
+restore the version with your correct passwords,
+push it to your production environment,
+and ensure that your .gitignore contains <code>*database.php</code>.";
+echo "<br>";
+echo "If you already committed sensitive passwords, you should change them.  
+Once it has been committed publicly, they should no longer be considered secure.
+Please refrain from committing sensitive passwords.
+";
+echo "";
+exit;
+
 return array(
 
     /*
