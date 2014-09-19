@@ -8,13 +8,16 @@ class RolesTableSeeder extends Seeder {
 	public function run()
 	{
 		$faker = Faker::create();
+        DB::table('roles')->delete();
+        Role::create([
+            'id'=>1,
+            'name'=>'Administrator'
+        ]);
+        Role::create([
+            'id'=>2,
+            'name'=>'Contributor'
+        ]);
 
-		foreach(range(1, 10) as $index)
-		{
-			Role::create([
-
-			]);
-		}
 	}
 
 }

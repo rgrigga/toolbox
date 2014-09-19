@@ -1,0 +1,23 @@
+@import "../../assets/bower_components/bootstrap/less/variables.less";
+@import "../../assets/bower_components/bootstrap/less/mixins.less";
+@import "../../assets/less/colors.less";
+
+.secondary{
+  .make-sm-column(3);
+  background-color: fade(@pomegranate,70%);
+  padding-top: 1em;
+  padding-bottom: 1em;
+  p{
+    color: lightgrey;
+  }
+}
+main{
+  .make-sm-column(9);
+}
+section.sidebar{
+  .make-sm-column(3);
+
+}
+#status ul{
+  list-style: none;
+}

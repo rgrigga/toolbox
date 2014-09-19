@@ -20,14 +20,14 @@ Route::pattern('id', '[0-9]+');
 
 //UNCOMMENT THESE LATER:
 try{
-    $company=Company::where('name','like','gristech')->first();
+    $company=Company::where('name','like','megacorp')->first();
 }catch(\Exception $e){
     //do nothing
-//    echo $e->getMessage();
-//    exit;
+    echo $e->getMessage();
+    exit;
 }
     App::bind('company',function($app){
-        return Company::where('name','like','gristech')->first();
+        return Company::where('brand','like','megacorp')->first();
     });
 
 
@@ -35,7 +35,8 @@ try{
 //    return Company::where('name','like','gristech')->first();
 //});
 //
-View::share('company',Company::where('name','like','gristech')->first());
+View::share('company',Company::where('brand','like','megacorp')->first());
+
 
 View::composer('site.nav', function($view)
 {

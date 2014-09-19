@@ -27,13 +27,30 @@ $grav="http://www.gravatar.com/avatar/" . $hash
 
 
 $profileUrl = "http://www.gravatar.com/".$hash .".php";
-$str=file_get_contents($profileUrl);
-$profile=unserialize($str);
-
+try{
+    $str=file_get_contents($profileUrl);
+}catch(ErrorException $e){
+    $failed=true;
+}
 ?>
 
 
+@if($failed)
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-6">
+            Your profile has not been set up.
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <a href="http://en.gravatar.com/profiles/edit/#about-you" class="btn btn-lg btn-primary">Create Your Profile</a>
+        </div>
+    </div>
+</div>
+@else
 <?php
+$profile=unserialize($str);
 $location=(array_key_exists('currentLocation',$profile['entry']['0']))?
     $profile['entry']['0']['currentLocation']:"";
 
@@ -47,7 +64,6 @@ $givenName=(array_key_exists('givenName',$profile['entry']['0']['name']))?
 $familyName=(array_key_exists('familyName',$profile['entry']['0']['name']))?
     $profile['entry']['0']['name']['familyName']:"";
 ?>
-
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-6">
@@ -77,7 +93,7 @@ $familyName=(array_key_exists('familyName',$profile['entry']['0']['name']))?
         </div>
     </div>
 </div>
-
+@endif
 
 @stop
 

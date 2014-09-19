@@ -1,0 +1,45 @@
+.secondary {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgba(192, 57, 43, 0.7);
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+@media (min-width: 768px) {
+  .secondary {
+    float: left;
+    width: 25%;
+  }
+}
+.secondary p {
+  color: lightgrey;
+}
+main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  main {
+    float: left;
+    width: 75%;
+  }
+}
+section.sidebar {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  section.sidebar {
+    float: left;
+    width: 25%;
+  }
+}
+#status ul {
+  list-style: none;
+}

@@ -2,6 +2,11 @@
 <!--<p class="navbar-text navbar-left">-->
 <!--    <span>Contact:</span>-->
 <!--</p>-->
+<?php
+if(empty($company)){
+    trigger_error("COMPANY IS MISSING");
+}
+?>
 <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <span class="caret"></span></a>
 

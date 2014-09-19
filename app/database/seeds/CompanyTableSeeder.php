@@ -19,8 +19,10 @@ class CompanyTableSeeder extends Seeder {
 //            'menus'=>'about,code',
 //        ]);
         Company::create([
-            'name'=>'Gristech',
-            'brand'=>'gristech',
+            'id'=>1,
+            'name'=>'MegaCorp',
+            'brand'=>'megacorp',
+            'email'=>'megacorp@gmail.com',
 //                'facebook'=>'company'.$index,
 //                'twitter'=>'company'.$index,
 //                'linkedin'=>'company'.$index,
@@ -33,8 +35,7 @@ class CompanyTableSeeder extends Seeder {
         ]);
 		foreach(range(1, 10) as $index)
 		{
-
-			Company::create([
+			$result=Company::create([
                 'name'=>'company'.$index. " INC",
                 'brand'=>'company'.$index,
                 'facebook'=>'company'.$index,
@@ -47,6 +48,7 @@ class CompanyTableSeeder extends Seeder {
                 'image'=>'http://www.lorempixel.com/',
                 'menus'=>'about,contact,code',
 			]);
+//            echo $result.PHP_EOL;
 
 		}
 	}

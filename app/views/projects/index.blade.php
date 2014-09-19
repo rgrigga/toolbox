@@ -5,7 +5,7 @@
 <h1>Project Index</h1>
 <p>An index should always return a list of the resource</p>
 <p>{{ link_to_route('projects.create', 'Add new Project') }}</p>
-<h2>User's Projects</h2>
+<h2>{{Auth::user()->fullname()}}'s Projects</h2>
 @if ($userProjects->count())
 	<table class="table table-striped table-bordered">
 		<thead>

@@ -9,11 +9,23 @@ class ProjectsTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
+        DB::table('projects')->delete();
+		foreach(range(1, 5) as $index)
 		{
 			Project::create([
-
+                'name'=>'AdminProject '.$index,
+                'link'=>'proj'.$index.'.myapp.dev',
+                'description'=>'Pure Awesome',
+                'owner'=>1,
+                'votes'=>5,
 			]);
+            Project::create([
+                'name'=>'UserProject '.$index,
+                'link'=>'userproj'.$index.'.myapp.dev',
+                'description'=>'Pure Awesome',
+                'owner'=>2,
+                'votes'=>5,
+            ]);
 		}
 	}
 

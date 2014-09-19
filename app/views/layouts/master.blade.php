@@ -14,6 +14,7 @@
     {{HTML::style('assets/bower_components/fontawesome/css/font-awesome.css');}}
 <!--    {{HTML::style('assets/css/general.css');}}-->
 <!--    {{HTML::style('assets/css/stickyfooter.css');}}-->
+    {{HTML::style('assets/less/login.less',['rel'=>'stylesheet/less','type'=>'text/css']);}}
 
     {{HTML::script('assets/bower_components/jquery/dist/jquery.min.js');}}
     {{HTML::script('assets/bower_components/bootstrap/dist/js/bootstrap.min.js');}}
@@ -21,7 +22,6 @@
     {{HTML::script('assets/bower_components/bootstrap/js/popover.js');}}
     {{HTML::script('assets/bower_components/less/dist/less-1.7.4.min.js');}}
 
-    {{HTML::style('assets/less/login.less',['rel'=>'stylesheet/less','type'=>'text/css']);}}
 
     @show
     @section('topscripts')
@@ -79,13 +79,12 @@ $imgUrl=$default;
 ?>
 <style>
     body{
-        background: url({{$imgUrl}}) no-repeat center center fixed;
+        background: url(<?= $imgUrl ?>) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
     }
-
 </style>
 @section('navbar')
 @include('site.nav')
@@ -103,6 +102,8 @@ $imgUrl=$default;
 <div id="body-wrap" class="container">
     @include('site.partials.notifications')
 
+
+    @yield('secondary')
     <main>
         @yield('page-header')
         @yield('content')
@@ -111,7 +112,10 @@ $imgUrl=$default;
 </div>
 
 @section('sidebar')
+<section class="sidebar">
+    <code>section('sidebar')</code>
 
+</section>
 @show
 
 <!--<code>layouts.master</code>-->

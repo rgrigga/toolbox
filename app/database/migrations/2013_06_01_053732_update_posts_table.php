@@ -27,7 +27,7 @@ class UpdatePostsTable extends Migration {
 	{
 		Schema::table('posts', function(Blueprint $table)
 		{
-			$table->dropIndex('image');
+//			$table->dropIndex('image');
 		});
 	}
 
