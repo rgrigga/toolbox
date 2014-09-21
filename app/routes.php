@@ -16,25 +16,31 @@ Route::pattern('id', '[0-9]+');
 |
 */
 
-//COMMENT/UNCOMMENT THESE AT WILL:
-try{
-    $company=Company::where('brand','like','gristech')->first();
-}catch(\Exception $e){
-    //do nothing
-    echo $e->getMessage();
-    exit;
-}
+if(!App::runningInConsole()){
+    try{
+        $company=Company::where('brand','like','gristech')->first();
 
-    App::bind('company',function($app){
-        return Company::where('brand','like','gristech')->first();
-    });
+    }catch(\Exception $e){
+        //do nothing
+        echo $e->getMessage();
+        exit;
+    }
+    if(!empty($company)){
+        App::bind('company',function($app){
+            return Company::where('brand','like','gristech')->first();
+        });
+        View::share('company',Company::where('brand','like','gristech')->first());
+    }
+}
+//COMMENT/UNCOMMENT THESE AT WILL:
+
+
 
 
 //App::bind('gristech',function($app){
 //    return Company::where('name','like','gristech')->first();
 //});
 //
-View::share('company',Company::where('brand','like','gristech')->first());
 
 
 View::composer('site.nav', function($view)
@@ -92,6 +98,8 @@ Route::resource('roles', 'AdminRolesController');
 // Confide routes
 //Route::get('users/{user}', 'UsersController@show')
 //    ->where('user', '[0-9]+');
+
+
 
 Route::get('users/create', ['as'=>'signup','uses'=>'UsersController@create']);
 Route::post('users', 'UsersController@store');

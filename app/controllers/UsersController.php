@@ -28,7 +28,11 @@ class UsersController extends Controller
     }
     public function index()
     {
+
         $users = $this->user->paginate(10);
+//        if(empty($users)){
+//            $users = User::all();
+//        }
 //        $company=$this->company;
         // Show the page
         return View::make('user/index', compact('users','company','projects','userProjects'));
@@ -193,9 +197,11 @@ class UsersController extends Controller
 //            print_r(Auth::user());
 //            exit;
             Session::flash('msg',"You did it!");
-            return Redirect::intended('/')
+
+//            return "You did it.";
+            return Redirect::intended('/');
 //                ->withErrors('msg',"You are logged in!")
-            ->withErrors('success',"You are logged in!");
+//            ->withErrors('success',"You are logged in!");
         } else {
             if ($repo->isThrottled($input)) {
                 $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
@@ -206,8 +212,10 @@ class UsersController extends Controller
             }
 
             Session::flash('mydata',$err_msg);
+            Session::flash('error',$err_msg);
             return Redirect::action('UsersController@login')
                 ->withInput(Input::except('password'))
+                ->withErrors(['msg'=>$err_msg])
                 ->with('error', $err_msg);
         }
     }

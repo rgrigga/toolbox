@@ -19,8 +19,17 @@ body {
     width: 25%;
   }
 }
+.secondary h1,
+.secondary h2,
+.secondary h3,
+.secondary h4,
+.secondary h5,
+.secondary h6,
 .secondary p {
   color: lightgrey;
+}
+.secondary .well {
+  background-color: rgba(192, 57, 43, 0.7);
 }
 main {
   position: relative;

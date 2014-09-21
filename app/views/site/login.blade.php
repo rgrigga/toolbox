@@ -57,7 +57,13 @@
             </p>
             <p>email confirmation is currently disabled, so you can pretty much just click the button, save your desired credentials, and you'll then be able to access the entire system.</p>
         </div>
-
+        <div class="well">
+            <h4>Prefer a Demo?</h4>
+            <p class="text-center">Just want to take this baby for a test drive?</p>
+            <p class="text-center">You can login like this:</p>
+            <p class="text-center">Username: <mark><b>demo</b></mark></p>
+            <p class="text-center">Password: <mark><b>password</b></mark></p>
+        </div>
     </div>
     @parent
     @stop
