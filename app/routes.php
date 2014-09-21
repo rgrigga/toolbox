@@ -233,7 +233,7 @@ Route::any('{tag}',function($tag){
     echo "<br>oops, your request for \"".$tag."\" has not been found.";
     echo "<br>";
     App::abort(404);
-    echo Redirect::intended('home');
+    echo Redirect::intended('/');
 });
 
 Route::get('/', function()

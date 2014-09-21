@@ -5,14 +5,15 @@
 <!-- I am a little unclear on what all this function does: -->
 <!-- Among other things, it does inject a hidden xss helper field -->
 
-
 <div class="searchbox">
 	{{ Form::open(array('url' => 'search')) }}
 <!-- http://laravel.com/docs/html#form-model-binding -->
 <!-- //echo Form::model($user, array('route' => array('user.update', $user->id))) -->
 	<div class="form-group">
-		<input name="tag" id="tag" type="text" class="search-query form-control" placeholder="Search for anything" value="">
+		<input name="tag" id="tag" type="text" class="search-query form-control" placeholder="{{$uri}}" value="">
+        {{Form::text('search', $uri)}}
 	</div>
+
 	<button type="submit" class="btn btn-default">Submit</button>
 	
 	{{Form::close()}}

@@ -10,27 +10,7 @@
 //Once it has been committed publicly, they should no longer be considered secure.
 //Please refrain from committing sensitive passwords.
 //";
-?>
-<!--<h1>More instructions:</h1>-->
-<!--<p>Edit <code>app/config/database.php</code>.  This is your production database configuration.</p>-->
-<!--<p>update it to look something like this:</p>-->
-<!--<pre><code>-->
-<!--    'mysql' => array(-->
-<!--        'driver'    => 'mysql',-->
-<!--        'host'      => 'localhost',-->
-<!--        'database'  => 'gristech_toolbox',-->
-<!--        'username'  => 'gristech_toolbox',-->
-<!--        'password'  => 'mypassword',-->
-<!--        'charset'   => 'utf8',-->
-<!--        'collation' => 'utf8_unicode_ci',-->
-<!--        'prefix'    => '',-->
-<!--    ),-->
-<!--</code></pre>-->
 
-<?php
-//exit;
-
-////////////REMOVE/COMMENT EVERYTHING FROM HERE UP/////////////////
 return array(
 
     /*

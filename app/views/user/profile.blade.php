@@ -32,10 +32,11 @@ try{
 }catch(ErrorException $e){
     $failed=true;
 }
+
 ?>
 
 
-@if($failed)
+@if(!empty($failed))
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-6">

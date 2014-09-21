@@ -2,6 +2,8 @@
 
 @section('page-header')
 <h1>Login</h1>
+{{$error or "no errors"}}
+{{$errors->first()}}
 @stop
 
 @section('content')
@@ -12,6 +14,7 @@
 </section>
 <section class="codesample">
     <code>section:codesample</code>
+    <p>Here is some live code being used to generate this page:</p>
 <?php
 $eot=<<<'EOT'
 @import "../../assets/bower_components/bootstrap/less/variables.less";
@@ -59,6 +62,7 @@ $githubpath="https://github.com/rgrigga/toolbox/blob/master/public".$path;
         <p class="text-center">
             <?= link_to_route('signup','Create User',[],['class'=>'btn btn-primary']) ?>
         </p>
+        <p>email confirmation is currently disabled, so you can pretty much just click the button, save your desired credentials, and you'll then be able to access the entire system.</p>
     </div>
     <div>
         <h4>Prefer a Demo?</h4>
@@ -71,12 +75,10 @@ $githubpath="https://github.com/rgrigga/toolbox/blob/master/public".$path;
         <h4>Should it work?</h4>
         <ul>
             @foreach([
-            'login',
             'migrations',
             'seeds',
             'rememberme',
-            '',
-
+            'most other things',
             ] as $item)
             <li><span class="badge alert-success">Yes</span> {{$item}}</li>
             @endforeach
@@ -85,9 +87,10 @@ $githubpath="https://github.com/rgrigga/toolbox/blob/master/public".$path;
             <li><span class="badge alert-danger">No</span> {{$item}}</li>
             @endforeach
 
-            @foreach(['unit tests'] as $item)
+            @foreach(['unit tests','login'] as $item)
             <li><span class="badge alert-warning">Maybe</span> {{$item}}</li>
             @endforeach
+            <li>Login works locally, but not in production.</li>
         </ul>
     </div>
 

@@ -168,10 +168,15 @@ class UsersController extends Controller
      */
     public function login()
     {
-        if (Confide::user()) {
+        if ($user = Confide::user()) {
+
+            print_r($user);
+            exit;
             return Redirect::to('/');
         } else {
+
             return View::make('site.login')
+
                 ->nest('loginform',Config::get('confide::login_form'))
                 ->nest('security','site.pages.security')
                 ->nest('companyinfo','company.about');
@@ -189,7 +194,9 @@ class UsersController extends Controller
         $input = Input::all();
 
         if ($repo->login($input)) {
-            return Redirect::intended('/');
+
+            return Redirect::intended('/')
+                ->with('error',"You are logged in!");
         } else {
             if ($repo->isThrottled($input)) {
                 $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
