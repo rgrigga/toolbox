@@ -16,16 +16,15 @@ Route::pattern('id', '[0-9]+');
 |
 */
 
-
-
-//UNCOMMENT THESE LATER:
+//COMMENT/UNCOMMENT THESE AT WILL:
 try{
-    $company=Company::where('name','like','megacorp')->first();
+    $company=Company::where('brand','like','megacorp')->first();
 }catch(\Exception $e){
     //do nothing
     echo $e->getMessage();
     exit;
 }
+
     App::bind('company',function($app){
         return Company::where('brand','like','megacorp')->first();
     });

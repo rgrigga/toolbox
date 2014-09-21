@@ -11,10 +11,8 @@
     </div>
 </section>
 <section class="codesample">
-
     <code>section:codesample</code>
 <?php
-$url="https://github.com/rgrigga/toolbox/blob/master/public/assets/less/login.less";
 $eot=<<<'EOT'
 @import "../../assets/bower_components/bootstrap/less/variables.less";
 @import "../../assets/bower_components/bootstrap/less/mixins.less";
@@ -40,9 +38,14 @@ section.sidebar{
   list-style: none;
 }
 EOT;
+$path="/assets/less/login.less";
+$githubpath="https://github.com/rgrigga/toolbox/blob/master/public".$path;
 ?>
-    <h5>from <code>login.less</code>: <a href="{{$url}}">view source</a></h5>
-    <pre><code><?= htmlentities($eot); ?></code></pre>
+<?php $url = URL::to($path) ?>
+    <h5>from <code>login.less</code>: <a href="{{URL::to($url)}}">view source</a> | <a href="{{$githubpath}}">view github</a></h5>
+
+    <pre><code><?= htmlentities(file_get_contents(base_path()."/public".$path)); ?></code></pre>
+<!--    <pre><code>--><?//= htmlentities($eot); ?><!--</code></pre>-->
 </section>
 
 @stop

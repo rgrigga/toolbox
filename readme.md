@@ -32,7 +32,7 @@ Documentation for the entire framework can be found on the [Laravel website](htt
 
 ### Contributing
 
-Please do!  Ask me if you need help or don't know where to start.
+Please do!  Don't be afraid to press the little fork button.  Just ask me if you need help or don't know where to start.
 
 ### License
 

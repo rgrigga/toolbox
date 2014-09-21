@@ -2,6 +2,7 @@
 @import "../../assets/bower_components/bootstrap/less/mixins.less";
 @import "../../assets/less/colors.less";
 
+html,body { height:100%; }
 .secondary{
   .make-sm-column(3);
   background-color: fade(@pomegranate,70%);
@@ -10,6 +11,7 @@
   p{
     color: lightgrey;
   }
+  height: 100%;
 }
 main{
   .make-sm-column(9);
@@ -21,3 +23,4 @@ section.sidebar{
 #status ul{
   list-style: none;
 }
+

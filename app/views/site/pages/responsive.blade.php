@@ -12,9 +12,6 @@
 <abbr title="Looks great on any size device" class="initialism">Responsive</abbr>
 <p>What the heck is responsive design?</p>
 
-
-
-
 <div class="hero-unit">
 
 	<div class="row-fluid">
