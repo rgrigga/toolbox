@@ -1,5 +1,22 @@
 <?php
 
+function rand_md5($length) {
+    $max = ceil($length / 32);
+    $random = '';
+    for ($i = 0; $i < $max; $i ++) {
+        $random .= md5(microtime(true).mt_rand(10000,90000));
+    }
+    return substr($random, 0, $length);
+}
+
+?>
+
+
+<?php
+//you should set this, then you can comment out or delete from the exit up:
+//echo rand_md5('32');
+//exit;
+
 return array(
 
 	/*
@@ -78,7 +95,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => '5e6a2135ec836e897f7c45fe591c02cc',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 

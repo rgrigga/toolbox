@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-
+This is the site title.
     </title>
-
+    <link rel="shortcut icon" href="{{ asset('favicon.ico2') }}">
     @section('styles')
     <!--    {{HTML::style('assets/bower_components/bootstrap/css/bootstrap.less');}}-->
     {{HTML::style('assets/less/main.less',['rel'=>'stylesheet/less','type'=>'text/css']);}}

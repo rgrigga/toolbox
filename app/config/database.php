@@ -1,18 +1,36 @@
 <?php
+//
+//echo "This is an example file.  To prepare this file for production,
+//you should remove it from your branch of the VCS,
+//restore the version with your correct passwords,
+//push it to your production environment,
+//and ensure that your .gitignore contains <code>*database.php</code>.";
+//echo "<br>";
+//echo "If you already committed sensitive passwords, you should change them.
+//Once it has been committed publicly, they should no longer be considered secure.
+//Please refrain from committing sensitive passwords.
+//";
+?>
+<!--<h1>More instructions:</h1>-->
+<!--<p>Edit <code>app/config/database.php</code>.  This is your production database configuration.</p>-->
+<!--<p>update it to look something like this:</p>-->
+<!--<pre><code>-->
+<!--    'mysql' => array(-->
+<!--        'driver'    => 'mysql',-->
+<!--        'host'      => 'localhost',-->
+<!--        'database'  => 'gristech_toolbox',-->
+<!--        'username'  => 'gristech_toolbox',-->
+<!--        'password'  => 'mypassword',-->
+<!--        'charset'   => 'utf8',-->
+<!--        'collation' => 'utf8_unicode_ci',-->
+<!--        'prefix'    => '',-->
+<!--    ),-->
+<!--</code></pre>-->
 
-echo "This is an example file.  To prepare this file for production, 
-you should remove it from your branch of the VCS,
-restore the version with your correct passwords,
-push it to your production environment,
-and ensure that your .gitignore contains <code>*database.php</code>.";
-echo "<br>";
-echo "If you already committed sensitive passwords, you should change them.  
-Once it has been committed publicly, they should no longer be considered secure.
-Please refrain from committing sensitive passwords.
-";
-echo "";
-exit;
+<?php
+//exit;
 
+////////////REMOVE/COMMENT EVERYTHING FROM HERE UP/////////////////
 return array(
 
     /*
@@ -70,7 +88,7 @@ return array(
             'host'      => 'localhost',
             'database'  => 'gristech_toolbox',
             'username'  => 'gristech_toolbox',
-            'password'  => 'mypassword',
+            'password'  => 'abc123!@#',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

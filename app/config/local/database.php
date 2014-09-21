@@ -23,7 +23,7 @@ return array(
         'vagrant' => array(
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'login',
+            'database' => 'toolbox',
             'username' => 'root',
             'password' => 'root',
             'charset' => 'utf8',
@@ -33,7 +33,7 @@ return array(
         'mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'login',
+            'database'  => 'toolbox',
             'username'  => 'root',
             'password'  => 'root',
             'charset'   => 'utf8',

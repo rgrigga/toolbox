@@ -18,7 +18,7 @@ Route::pattern('id', '[0-9]+');
 
 //COMMENT/UNCOMMENT THESE AT WILL:
 try{
-    $company=Company::where('brand','like','megacorp')->first();
+    $company=Company::where('brand','like','gristech')->first();
 }catch(\Exception $e){
     //do nothing
     echo $e->getMessage();
@@ -26,7 +26,7 @@ try{
 }
 
     App::bind('company',function($app){
-        return Company::where('brand','like','megacorp')->first();
+        return Company::where('brand','like','gristech')->first();
     });
 
 
@@ -34,7 +34,7 @@ try{
 //    return Company::where('name','like','gristech')->first();
 //});
 //
-View::share('company',Company::where('brand','like','megacorp')->first());
+View::share('company',Company::where('brand','like','gristech')->first());
 
 
 View::composer('site.nav', function($view)
@@ -224,18 +224,16 @@ Route::get('admin',function(){
 Route::any('{tag}',function($tag){
 
     ?>
-    <script type="text/JavaScript">
+<!--    <script type="text/JavaScript">-->
         <!--
-        setTimeout("location.href = 'http://login.dev';",1500);
-        -->
-    </script>
+<!--        setTimeout("location.href = '/';",1500);-->
+
+<!--    </script>-->
     <?php
     echo "<br>oops, your request for \"".$tag."\" has not been found.";
     echo "<br>";
+    App::abort(404);
     echo Redirect::intended('home');
-
-
-
 });
 
 Route::get('/', function()
