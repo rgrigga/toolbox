@@ -13,7 +13,7 @@ $prefix=(Auth::user())?Auth::user()->username . "@" : "";
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">{{$prefix}}gristech.com</a>
+            <a class="navbar-brand" href="/">{{$prefix}}{{$company->brand}}.com</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,7 +23,15 @@ $prefix=(Auth::user())?Auth::user()->username . "@" : "";
 
                 @foreach(explode(',',($company->menus)?:'about') as $menu)
                 <li class="nav-item {{ (Route::currentRouteName()==strtolower(trim($menu))) ? 'active' : '' }}">
-                    <?= link_to_route(strtolower(trim($menu)),ucfirst(trim($menu))) ?>
+                    <?php
+                    try{
+                        echo link_to_route(strtolower(trim($menu)),ucfirst(trim($menu)));
+                    }catch(\Exception $e){
+                        ?>
+                        <a href="/{{$menu}}">{{$menu}}</a>
+                    <?php
+                    }
+                    ?>
                 </li>
                 @endforeach
                 @if(Auth::check())

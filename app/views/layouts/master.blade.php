@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-This is the site title.
-    </title>
+    <title>{{Request::url()}}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico2') }}">
     @section('styles')
     <!--    {{HTML::style('assets/bower_components/bootstrap/css/bootstrap.less');}}-->
@@ -91,35 +89,40 @@ $imgUrl=$default;
 </style>
 @section('navbar')
 @include('site.nav')
-
 @show
 
 @section('admin-nav')
 @if(Auth::check() && Auth::user()->hasRole('Administrator'))
-<!--<h1>Admin nav</h1>-->
+<code>admin-nav</code>
 @include('admin.nav')
 @endif
 
+@yield('test')
 
 @show
-<div id="body-wrap" class="container">
-    @include('site.partials.notifications')
+<div id="body-wrap" class="container-fluid">
+    <div class="row">
+        @include('site.partials.notifications')
 
+        @yield('secondary')
 
-    @yield('secondary')
-    <main>
-        @yield('page-header')
-        @yield('content')
-        @yield('main')
-    </main>
+        <main>
+            @yield('page-header')
+            @yield('content')
+            @yield('main')
+        </main>
+        <section id="sidebar">
+        @section('sidebar')
+            <h4>System Updates:</h4>
+            <p class="bg-info">There are no current messages.</p>
+<!--            <code>section('sidebar')</code>-->
+        @show
+        </section>
+
+    </div>
 </div>
 
-@section('sidebar')
-<section class="sidebar">
-    <code>section('sidebar')</code>
 
-</section>
-@show
 
 <!--<code>layouts.master</code>-->
 

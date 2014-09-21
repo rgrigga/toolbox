@@ -169,16 +169,11 @@ class UsersController extends Controller
     public function login()
     {
         if ($user = Confide::user()) {
-
-            print_r($user);
-            exit;
-            return Redirect::to('/');
+            return Redirect::to('/')->withErrors(['msg'=>"You are already logged in, ".$user->fullName()."!"]);
         } else {
 
             return View::make('site.login')
-
                 ->nest('loginform',Config::get('confide::login_form'))
-                ->nest('security','site.pages.security')
                 ->nest('companyinfo','company.about');
         }
     }
@@ -195,8 +190,12 @@ class UsersController extends Controller
 
         if ($repo->login($input)) {
 
+//            print_r(Auth::user());
+//            exit;
+            Session::flash('msg',"You did it!");
             return Redirect::intended('/')
-                ->with('error',"You are logged in!");
+//                ->withErrors('msg',"You are logged in!")
+            ->withErrors('success',"You are logged in!");
         } else {
             if ($repo->isThrottled($input)) {
                 $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
@@ -206,6 +205,7 @@ class UsersController extends Controller
                 $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
             }
 
+            Session::flash('mydata',$err_msg);
             return Redirect::action('UsersController@login')
                 ->withInput(Input::except('password'))
                 ->with('error', $err_msg);

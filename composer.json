@@ -12,7 +12,9 @@
         "fzaninotto/faker": "v1.4.0"
     },
     "require-dev":{
-        "way/generators": "~2.0"
+        "way/generators": "~2.0",
+        "phpunit/phpunit":"4.0.*",
+        "mockery/mockery":"0.9.*"
     },
 	"autoload": {
 		"classmap": [

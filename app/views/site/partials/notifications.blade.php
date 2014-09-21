@@ -1,4 +1,3 @@
-
 <!--<h1>Notifications:</h1>-->
 @if ($errors->any())
 <div class="alert">
@@ -6,6 +5,14 @@
         {{ implode('', $errors->all('<li class="error">:message</li>')) }}
     </ul>
 </div>
+@endif
+
+@if(Session::get('msg'))
+<div class="bg-success">{{Session::get('msg')}}</div>
+<?php Session::forget('msg'); ?>
+@else
+<div class="bg-success"><code>site.partials.notifications</code></div>
+
 @endif
 
 @if(Session::get('message'))

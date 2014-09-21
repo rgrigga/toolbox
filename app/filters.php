@@ -44,7 +44,7 @@ Route::filter('auth', function()
 		else
 		{
 			return Redirect::guest('site.login')
-                ->with('error','You must be logged in for that.');
+                ->withErrors('msg','You must be logged in for that.');
 		}
 	}
 });

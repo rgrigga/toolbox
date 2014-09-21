@@ -5904,7 +5904,9 @@ article:after,
 aside:before,
 aside:after,
 #loginform:before,
-#loginform:after {
+#loginform:after,
+.makerow:before,
+.makerow:after {
   content: " ";
   display: table;
 }
@@ -5925,7 +5927,8 @@ aside:after,
 .modal-footer:after,
 article:after,
 aside:after,
-#loginform:after {
+#loginform:after,
+.makerow:after {
   clear: both;
 }
 .center-block {
@@ -6283,9 +6286,6 @@ aside article {
 aside article img {
   padding: 3em;
 }
-.sidebar {
-  background-color: #000000;
-}
 ul.contact-nav li a {
   padding-left: 2px;
   padding-right: 2px;
@@ -6365,4 +6365,99 @@ ul.nav li.nav-item a:hover {
 }
 table.table-bordered {
   border: 20px solid #8D8D8D;
+}
+#body-wrap {
+  background-color: rgba(236, 240, 241, 0.8);
+  color: #2c3e50;
+}
+#body-wrap main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #body-wrap main {
+    float: left;
+    width: 75%;
+  }
+}
+#body-wrap2 {
+  background-color: rgba(44, 62, 80, 0.2);
+  min-height: 800px;
+  height: 100%;
+}
+#body-wrap2:before,
+#body-wrap2:after {
+  content: " ";
+  display: table;
+}
+#body-wrap2:after {
+  clear: both;
+}
+#body-wrap2:before,
+#body-wrap2:after {
+  content: " ";
+  display: table;
+}
+#body-wrap2:after {
+  clear: both;
+}
+#sidebar {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #sidebar {
+    float: left;
+    width: 25%;
+  }
+}
+.welcome {
+  min-height: 800px;
+  height: 100%;
+}
+/*#body-wrap2{*/
+/*position: fixed;*/
+/*top:0;*/
+/*left: 0;*/
+/*min-height: 800px;*/
+/*height: 100%;*/
+/*width: 100%;*/
+/*}*/
+.makerow {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .main {
+    float: left;
+    width: 75%;
+  }
+}
+.side {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .side {
+    float: left;
+    width: 25%;
+  }
+}
+#test {
+  padding-bottom: 5px;
+  width: 100%;
+  color: white;
+  background-color: #000000;
 }

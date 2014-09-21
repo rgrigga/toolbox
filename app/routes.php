@@ -233,13 +233,13 @@ Route::any('{tag}',function($tag){
     echo "<br>oops, your request for \"".$tag."\" has not been found.";
     echo "<br>";
     App::abort(404);
-    echo Redirect::intended('/');
+//    echo Redirect::intended('/');
 });
 
 Route::get('/', function()
 {
     $user=Auth::user();
     return View::make('site.index')
-//        ->nest('profile','user.profile',compact('user'))
+        ->nest('profile','user.partials.profile',compact('user'))
         ;
 });

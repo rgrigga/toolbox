@@ -10,7 +10,6 @@
 
 <!--    {{HTML::style('assets/less/main.less',['rel'=>'stylesheet/less','type'=>'text/css']);}}-->
     {{HTML::style('assets/less/admin.less',['rel'=>'stylesheet/less','type'=>'text/css']);}}
-    {{HTML::style('assets/css/admin.css');}}
     {{HTML::style('assets/bower_components/fontawesome/css/font-awesome.css');}}
 <!--    {{HTML::style('assets/css/stickyfooter.css');}}-->
 

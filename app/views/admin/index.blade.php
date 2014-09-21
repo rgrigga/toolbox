@@ -13,7 +13,7 @@
 {{ link_to('admin/projects/create', 'Add One') }}
 <ul>
     @foreach($projects as $p)
-    <li>{{$p->name}}{{ link_to('projects/'.$p->id.'/edit', 'Add One') }}
+    <li>{{$p->name}} {{ link_to('projects/'.$p->id.'/edit', 'Edit') }}
     </li>
     @endforeach
 </ul>
