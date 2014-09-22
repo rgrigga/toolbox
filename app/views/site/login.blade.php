@@ -59,6 +59,10 @@
         </div>
         <div class="well">
             <h4>Prefer a Demo?</h4>
+            <div class="alert">
+                Oops! Production login is currently broken :(
+            </div>
+
             <p class="text-center">Just want to take this baby for a test drive?</p>
             <p class="text-center">You can login like this:</p>
             <p class="text-center">Username: <mark><b>demo</b></mark></p>
