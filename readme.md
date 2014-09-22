@@ -32,6 +32,7 @@ This package makes use of other fantasic packages: thank you to all:
 * [https://github.com/Zizaco/entrust](Entrust) Roles & Permissions
 * [https://github.com/Zizaco/confide](Confide) User Administration (Login)
 
+And of course:
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
