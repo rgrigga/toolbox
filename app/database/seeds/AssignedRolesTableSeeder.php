@@ -9,6 +9,7 @@ class AssignedRolesTableSeeder extends Seeder {
     {
         $faker = Faker::create();
 
+        DB::table('assigned_roles')->delete();
         DB::table('assigned_roles')->insert([
             'user_id'=>1,
             'role_id'=>1

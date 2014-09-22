@@ -16,6 +16,7 @@ Route::pattern('id', '[0-9]+');
 |
 */
 
+//COMMENT/UNCOMMENT/MODIFY THESE AT WILL:
 if(!App::runningInConsole()){
     try{
         $company=Company::where('brand','like','gristech')->first();
@@ -25,6 +26,19 @@ if(!App::runningInConsole()){
         echo $e->getMessage();
         exit;
     }
+    if(empty($company)){
+        Company::create([
+            'id'=>1,
+            'name'=>'Gristech',
+            'brand'=>'gristech',
+            'phone'=>'6142039405',
+            'description'=>'Web Development.',
+            'slogan'=>'Think about it.',
+            'image'=>'buckeye-icon.svg',
+            'menus'=>'about,contact,code',
+        ]);
+    }
+    $company=Company::where('brand','like','gristech')->first();
     if(!empty($company)){
         App::bind('company',function($app){
             return Company::where('brand','like','gristech')->first();
@@ -32,16 +46,6 @@ if(!App::runningInConsole()){
         View::share('company',Company::where('brand','like','gristech')->first());
     }
 }
-//COMMENT/UNCOMMENT THESE AT WILL:
-
-
-
-
-//App::bind('gristech',function($app){
-//    return Company::where('name','like','gristech')->first();
-//});
-//
-
 
 View::composer('site.nav', function($view)
 {
@@ -212,14 +216,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
     # Admin Dashboard
     // Route::controller('{page?}', 'AdminDashboardController');
 
-
-
     route::get('index', ['as'=>'admin.index','uses'=>'AdminBlogsController@getIndex']);
     Route::controller('/', 'AdminBlogsController');
 
 });
-
-
 
 Route::get('admin',function(){
     $users=User::all();
@@ -229,20 +229,10 @@ Route::get('admin',function(){
     return View::make('admin.index')->with(compact('users','sites','projects'));
 });
 
-Route::any('{tag}',function($tag){
-
-    ?>
-<!--    <script type="text/JavaScript">-->
-        <!--
-<!--        setTimeout("location.href = '/';",1500);-->
-
-<!--    </script>-->
-    <?php
-    echo "<br>oops, your request for \"".$tag."\" has not been found.";
-    echo "<br>";
-    App::abort(404);
-//    echo Redirect::intended('/');
-});
+//Route::any('{tag}',function($tag){
+//    App::abort(404);
+////    echo Redirect::intended('/');
+//});
 
 Route::get('/', function()
 {

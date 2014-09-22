@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
+
 @section('page-header')
 <h1>Login</h1>
 <div class="alert">
-    {{$error or "no errors"}}
     {{$errors->first()}}
 
     @if($errors->any())
@@ -71,7 +71,7 @@
 
 
 @section('footer')
-{{$companyinfo}}
+
 @stop
 
 @section('sidebar-left')

@@ -1,9 +1,9 @@
 {{--Form::open(array('url'=>'search','method'=>'post'))--}}
 {{-- Form::open(array('action' => 'BlogController@postSearch')) --}}
 
-<!-- //I'm not too sure about this.  It's a styling challenge... -->
+<!-- //I'm not too sure about the above.  It's a styling challenge... -->
 <!-- I am a little unclear on what all this function does: -->
-<!-- Among other things, it does inject a hidden xss helper field -->
+<!-- Among other things, it does inject a hidden xss token -->
 
 <div class="searchbox">
 	{{ Form::open(array('url' => 'search')) }}
@@ -11,7 +11,7 @@
 <!-- //echo Form::model($user, array('route' => array('user.update', $user->id))) -->
 	<div class="form-group">
 		<input name="tag" id="tag" type="text" class="search-query form-control" placeholder="{{$uri}}" value="">
-        {{Form::text('search', $uri)}}
+<!--        @{{Form::text('search', $uri)}}-->
 	</div>
 
 	<button type="submit" class="btn btn-default">Submit</button>

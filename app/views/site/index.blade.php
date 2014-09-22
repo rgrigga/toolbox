@@ -2,7 +2,6 @@
 
 @section('styles')
 @parent
-
 <style>
     @import url(//fonts.googleapis.com/css?family=Lato:700);
 
@@ -51,16 +50,11 @@
     }
 
     div.footer{
-
         padding-top: 20px;
         /*position: fixed;*/
         /*bottom: 0;*/
     }
-
 </style>
-
-
-
 @stop
 
 @section('test')

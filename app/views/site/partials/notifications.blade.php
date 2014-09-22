@@ -12,7 +12,6 @@
 <?php Session::forget('msg'); ?>
 @else
 <div class="bg-success"><code>site.partials.notifications</code></div>
-
 @endif
 
 @if(Session::get('message'))
@@ -29,8 +28,11 @@
 @endif
 
 @if(Session::get('danger'))
-<div class="alert alert-danger">Error{{Session::get('danger')}}</div>
+<div class="alert alert-danger">Error: {{Session::get('danger')}}</div>
 @endif
 @if(Session::get('error'))
-<div class="alert alert-danger">Error{{Session::get('error')}}</div>
+<p class="bg-danger">{{Session::get('error')}}</p>
+<!--<div class="alert alert-danger">Error: {{Session::get('error')}}</div>-->
+@else
+<p class="bg-success">There were no errors.</p>
 @endif

@@ -17,7 +17,11 @@ class AdminUserSeeder extends Seeder {
             'username'=>'admin',
             'email'=>'admin@example.com',
             'password'=>Hash::make('admin'),
-            'password_confirmation'=>Hash::make('admin'),
+//            'password_confirmation'=>Hash::make('admin'),
+
+//                'password'=>'admin',
+//                'password_confirmation'=>'admin',
+
             'confirmed'=>1,
 //            'password_confirmation' => 'foo_bar_1234',
             'confirmation_code' => md5(uniqid(mt_rand(), true)),
@@ -29,8 +33,9 @@ class AdminUserSeeder extends Seeder {
             'username'=>'demo',
             'email'=>'demo@example.com',
             'confirmed'=>1,
+//            'password'=>'password',
             'password'=>Hash::make('password'),
-            'password_confirmation'=>Hash::make('admin'),
+//            'password_confirmation'=>Hash::make('password'),
             'confirmation_code' => md5(uniqid(mt_rand(), true)),
             'created_at'=>date("Y-m-d H:i:s"),
             'updated_at'=>date("Y-m-d H:i:s"),

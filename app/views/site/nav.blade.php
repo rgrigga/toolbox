@@ -1,9 +1,8 @@
 <?php
 $prefix=(Auth::user())?Auth::user()->username . "@" : "";
 ?>
-
 @section('navbar')
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top user-top" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -51,11 +50,6 @@ $prefix=(Auth::user())?Auth::user()->username . "@" : "";
             </p>
             <ul class="nav navbar-nav navbar-right">
 
-                <li>
-
-
-
-                </li>
                 @if(!Auth::check())
                 <li id="#loginbutton" data-container="body" data-toggle="popover" data-title="more thoughts" data-content="Login!" class="nav-item {{ (Route::currentRouteName()=='login') ? 'active' : '' }}">
                     <?= (!in_array(Route::currentRouteName(),['register','login'])) ? link_to_route('login','Login') : '' ?>
@@ -88,7 +82,5 @@ $prefix=(Auth::user())?Auth::user()->username . "@" : "";
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
-
 @stop
 

@@ -74,7 +74,6 @@ try{
     $background = $default;
     $str="";
 }
-
 //$imgUrl=asset('assets/img/Five_petal_flower_icon.svg');
 $imgUrl=$default;
 ?>
@@ -97,7 +96,7 @@ $imgUrl=$default;
 @include('admin.nav')
 @endif
 
-@yield('test')
+
 
 @show
 <div id="body-wrap" class="container-fluid">
@@ -137,6 +136,7 @@ $imgUrl=$default;
 
 @section('script')
 {{HTML::script('assets/js/main.js');}}
+
 @show
 </body>
 </html>

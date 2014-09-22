@@ -177,8 +177,8 @@ class UsersController extends Controller
         } else {
 
             return View::make('site.login')
-                ->nest('loginform',Config::get('confide::login_form'))
-                ->nest('companyinfo','company.about');
+                ->nest('loginform',Config::get('confide::login_form'));
+//                ->nest('companyinfo','company.about');
         }
     }
 
@@ -193,15 +193,7 @@ class UsersController extends Controller
         $input = Input::all();
 
         if ($repo->login($input)) {
-
-//            print_r(Auth::user());
-//            exit;
-            Session::flash('msg',"You did it!");
-
-//            return "You did it.";
             return Redirect::intended('/');
-//                ->withErrors('msg',"You are logged in!")
-//            ->withErrors('success',"You are logged in!");
         } else {
             if ($repo->isThrottled($input)) {
                 $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
@@ -210,7 +202,6 @@ class UsersController extends Controller
             } else {
                 $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
             }
-
             Session::flash('mydata',$err_msg);
             Session::flash('error',$err_msg);
             return Redirect::action('UsersController@login')

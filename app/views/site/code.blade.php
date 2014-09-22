@@ -1,4 +1,5 @@
 @section('content')
+
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
 <div class="container">
 
@@ -637,13 +638,6 @@ EOT;
 
 @section('sidebar')
 <div class="sidebar">
-    @if(Auth::check())
-    <code>.sidebar</code>
-    {{$profile or ""}}
-    @else
-    <code>.sidebar</code>
-    <p>You're not logged in</p>
-    @endif
     <blockquote>
         <p>
             The more I learn, the more I realize I don't know. The more I realize I don't know, the more I want to learn.

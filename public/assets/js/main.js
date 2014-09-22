@@ -66,4 +66,25 @@ $('document').ready(function(){
     });
 
     $('pre').addClass('prettyprint');
+
+
+    //fix double navbar problem:
+    var utheight = $('.user-top').height();
+    console.log(utheight);
+
+    $('.admin-top').css({'margin-top':($('.user-top').height()+0)+'px'});
+    $('#body-wrap') .css({'padding-top': (
+        $('.user-top').height()
+        + $('.admin-top').height()
+        + 0 )+'px'
+        });
+
+    $(window).resize(function(){
+        $('.admin-top').css({'margin-top':($('.user-top').height()+0)+'px'});
+        $('#body-wrap') .css({'padding-top': (
+            $('.user-top').height()
+            + $('.admin-top').height()
+            + 0 )+'px'
+            });
+    });
 });
