@@ -22,7 +22,7 @@ password: password
 
 ##Demo
 Want a demo?  Here you go:
-[http://toolbox.gristech.com/](toolbox.gristech.com)
+[toolbox.gristech.com](http://toolbox.gristech.com/)
 
 ##Vagrant Server:
 
