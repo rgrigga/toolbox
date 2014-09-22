@@ -265,9 +265,8 @@ $grav="http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) )
 @endif
 <h2>Updates!</h2>
 
-<p class="bg-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deserunt.</p>
+<p class="bg-primary">System Updates and other administrative messages can be presented here.</p>
 @parent
-    <p class="bg-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deserunt.</p>
 
     <div id="systemstatus">
         <section class="status">
@@ -300,9 +299,7 @@ $grav="http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) )
 @stop
 
 @section('secondary')
-<!--<code>secondary</code>-->
-<p class="bg-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deserunt.</p>
-
+<p class="bg-primary">Today is the first day of the rest of your life.  Make it a great one.</p>
 @stop
 
 

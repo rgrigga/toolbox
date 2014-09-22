@@ -6189,6 +6189,9 @@ pre > code {
 pre {
   padding: 20px;
 }
+body {
+  background-color: rgba(236, 240, 241, 0.8);
+}
 #body-wrap {
   /*position: fixed;*/
   /*top:0;*/
@@ -6367,7 +6370,6 @@ table.table-bordered {
   border: 20px solid #8D8D8D;
 }
 #body-wrap {
-  background-color: rgba(236, 240, 241, 0.8);
   color: #2c3e50;
 }
 #body-wrap2 {
@@ -6440,4 +6442,8 @@ table.table-bordered {
   width: 100%;
   color: white;
   background-color: #000000;
+}
+.code-wrapper {
+  background-color: rgba(236, 240, 241, 0.8);
+  padding: 10px;
 }

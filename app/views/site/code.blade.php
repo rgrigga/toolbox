@@ -1,13 +1,13 @@
 @section('content')
 
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-<div class="container">
+<div class="code-wrapper">
 
 <header>
-    <h1>My Development Stack</h1>
+    <h1>About This Stack</h1>
     <p>I think of development as a <strong>craft</strong>.</p>
-    <p>A "Craft" is like an "Art", but art makes us think of things like paintings.  The focus is generally on the aesthetic side of things.  It could be argued that the intent of such aesthetics on the business side is to attract customers and/or otherwise delight users.  There is certainly an artistic aspect to web development (or any development, for that matter).</p>
-    <p>Crafts generally require more tools and supplies than arts do: hammers, nails, screwdrivers, sandpaper,... glue, stain...</p>
+    <p>A "Craft" is like an "Art", and there is most certainly an artistic aspect to web development.</p>
+    <p>However, "Crafts" generally require more tools and supplies than arts do: hammers, nails, screwdrivers, sandpaper, glue, stain...</p>
     <p>Crafts also require <strong>specific knowledge</strong>.  Any kid can splash paint on paper and call it art, but a fine handcrafted piece of heirloom quality furniture can only be made by someone with the very best tools and a good deal of experience and knowhow.</p>
     <p>Development is <strong>hard</strong>.  It's a worthwhile pursuit, though, and it's a great blend of problem-solving, artistic inclination, analytical thinking, and detailed knowledge of a variety of tools and languages.</p>
     <p>Below is a description of the tools I enjoy using today:</p>
@@ -273,7 +273,7 @@ EOT;
                 <a class="btn btn-info" href="https://github.com/rgrigga?tab=repositories"><i class="fa fa-github"></i> Fork Me</a>
             </div>
             <h3>Social Coding</h3>
-            <p>I have a few repos here, see also <a href="#bitbucket">bitbucket</a>.</p>
+            <p>I have a few repos here, including the <a href="https://github.com/rgrigga/toolbox">source code</a> for the site you are viewing now.  see also <a href="#bitbucket">bitbucket</a>.</p>
         </div>
     </article>
 
@@ -636,6 +636,7 @@ EOT;
 </div>
 @stop
 
+
 @section('sidebar')
 <div class="sidebar">
     <blockquote>
@@ -645,4 +646,5 @@ EOT;
         <footer>Albert Einstein via <cite>@AlbertE_Quotes</cite></footer>
     </blockquote>
 </div>
+@parent
 @stop

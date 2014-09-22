@@ -2,6 +2,26 @@
 
     git clone https://github.com/rgrigga/toolbox path/to/toolbox
 
+Serve it however you like, pointing your documentroot to `toolbox/public`
+
+Then, run these commands:
+
+    composer update
+    php artisan migrate
+    php artisan db:seed
+
+If all goes well, you should have a working copy in your local environment, complete with example users:
+
+###Admin:
+username: admin
+password: admin
+
+###User:
+username: demo
+password: password
+
+##Vagrant Server:
+
 You can also clone my development vagrantServer if you like:
 
     https://github.com/rgrigga/vagrantserver
