@@ -33,8 +33,8 @@ You can also clone my development vagrantServer if you like:
 Ubuntu 14.04 with php, apache, mysql, phpmyadmin, bower, less, npm
 
 This package makes use of other fantasic packages: thank you to all:
-* [https://github.com/Zizaco/entrust](Entrust) Roles & Permissions
-* [https://github.com/Zizaco/confide](Confide) User Administration (Login)
+* [Entrust](https://github.com/Zizaco/entrust) Roles & Permissions
+* [Confide](https://github.com/Zizaco/confide) User Administration (Login)
 
 And of course:
 ## Laravel PHP Framework
