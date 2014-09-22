@@ -20,6 +20,10 @@ password: admin
 username: demo
 password: password
 
+##Demo
+Want a demo?  Here you go:
+[http://toolbox.gristech.com/](toolbox.gristech.com)
+
 ##Vagrant Server:
 
 You can also clone my development vagrantServer if you like:
