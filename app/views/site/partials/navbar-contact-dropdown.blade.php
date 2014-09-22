@@ -42,7 +42,7 @@ if(empty($company)){
         @endif
         @if($company->linkedin)
         <li>
-            <a class="navbar-link" href="http://linkedin.com/{{$company->linkedin}}" class="social-icon">
+            <a class="navbar-link" href="http://linkedin.com/in/{{$company->linkedin}}" class="social-icon">
                 <i class="fa fa-2x fa-linkedin-square"></i> {{$company->linkedin}}
             </a>
         </li>
