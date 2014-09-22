@@ -123,6 +123,7 @@ $imgUrl=$default;
     </div>
 </div>
 
+@yield('bouncer')
 
 
 <!--<code>layouts.master</code>-->
@@ -138,7 +139,6 @@ $imgUrl=$default;
     </div>
 </div>
 
-@yield('bouncer')
 
 @section('script')
 {{HTML::script('assets/js/main.js');}}
