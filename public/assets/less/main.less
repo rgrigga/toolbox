@@ -222,12 +222,15 @@ table.table-bordered{
   min-height: 800px;
   height: 100%;
 }
+
 #sidebar{
+  background-color: fade(@clouds,80%) !important;
   .make-sm-column(3);
   p{
-//    width: 100%;
+    //    width: 100%;
   }
 }
+
 .welcome{
 //  .make-sm-column(6);
   min-height: 800px;
@@ -254,4 +257,7 @@ table.table-bordered{
 .code-wrapper{
   background-color: fade(@clouds,80%);
   padding:10px;
+}
+.footer-wrap{
+  .make-row();
 }

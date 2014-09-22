@@ -5906,7 +5906,9 @@ aside:after,
 #loginform:before,
 #loginform:after,
 #test-wrapper .makerow:before,
-#test-wrapper .makerow:after {
+#test-wrapper .makerow:after,
+.footer-wrap:before,
+.footer-wrap:after {
   content: " ";
   display: table;
 }
@@ -5928,7 +5930,8 @@ aside:after,
 article:after,
 aside:after,
 #loginform:after,
-#test-wrapper .makerow:after {
+#test-wrapper .makerow:after,
+.footer-wrap:after {
   clear: both;
 }
 .center-block {
@@ -6394,6 +6397,7 @@ table.table-bordered {
   clear: both;
 }
 #sidebar {
+  background-color: rgba(236, 240, 241, 0.8) !important;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -6446,4 +6450,8 @@ table.table-bordered {
 .code-wrapper {
   background-color: rgba(236, 240, 241, 0.8);
   padding: 10px;
+}
+.footer-wrap {
+  margin-left: -15px;
+  margin-right: -15px;
 }

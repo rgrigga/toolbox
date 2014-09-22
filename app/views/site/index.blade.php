@@ -10,18 +10,8 @@
         font-family:'Lato', sans-serif;
         text-align:center;
         color: #999;
-        background-color: black;
-        background-image: none;
-    }
-
-    .welcome {
-        /*width: 300px;*/
-        /*height: 100px;*/
-        /*position: absolute;*/
-        /*left: 50%;*/
-        /*top: 30%;*/
-        /*margin-left: -150px;*/
-        /*margin-top: -50px;*/
+        /*background-color: black;*/
+        /*background-image: none;*/
     }
 
     a, a:visited {
@@ -89,8 +79,7 @@ $grav="http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) )
     @endif
 
     <div class="alert">
-        {{$error or "no errors"}}
-        {{$errors->first()}}
+        <p>{{$error or ""}}</p>
 
         @if($errors->any())
         <h4>{{$errors->first()}}</h4>
@@ -99,7 +88,7 @@ $grav="http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) )
         <?php
         $msg=Session::get('mydata');
         ?>
-        <h4>msg: {{$msg}}</h4>
+        <h4>{{$msg}}</h4>
 
     </div>
 

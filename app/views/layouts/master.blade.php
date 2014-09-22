@@ -20,6 +20,8 @@
     {{HTML::script('assets/bower_components/bootstrap/js/popover.js');}}
     {{HTML::script('assets/bower_components/less/dist/less-1.7.4.min.js');}}
 
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+
 
     @show
     @section('topscripts')
@@ -125,14 +127,17 @@ $imgUrl=$default;
 
 <!--<code>layouts.master</code>-->
 
-<div class="footer container">
-<!--    <code>.footer</code>-->
-    @section('footer')
+<div class="container">
+    <div class="footer-wrap">
+        <!--    <code>.footer</code>-->
+        @section('footer')
         <p><a href="http://rgrigga.github.io/toolbox">http://rgrigga.github.io/toolbox</a></p>
         <p class="muted small">&copy; 2014 {{App::make('company')->brand;}}</p>
         <p><?= link_to_route('admin.index','Admin') ?></p>
-    @show
+        @show
+    </div>
 </div>
+
 
 @section('script')
 {{HTML::script('assets/js/main.js');}}

@@ -26,7 +26,10 @@ class CompanyTableSeeder extends Seeder {
             'description'=>'Web Development.',
             'slogan'=>'Think about it.',
             'image'=>'buckeye-icon.svg',
-            'menus'=>'about,contact,code',
+            'menus'=>'about,code',
+            'facebook'=>'ryan.grissinger',
+            'linkedin'=>'ryangrissinger',
+            'twitter'=>'ryangrissinger',
         ]);
 //        Company::create([
 //            'id'=>1,

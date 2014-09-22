@@ -1,6 +1,5 @@
 @section('content')
 
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
 <div class="code-wrapper">
 
 <header>
