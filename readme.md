@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/rgrigga/toolbox.svg)](https://travis-ci.org/rgrigga/toolbox)
+
+
 #Clone this:
 
     git clone https://github.com/rgrigga/toolbox path/to/toolbox
