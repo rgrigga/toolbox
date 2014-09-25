@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rgrigga/toolbox.svg)](https://travis-ci.org/rgrigga/toolbox)
+Status at https://travis-ci.org/rgrigga/toolbox: [![Build Status](https://travis-ci.org/rgrigga/toolbox.svg)](https://travis-ci.org/rgrigga/toolbox)
 
 
 #Clone this:
