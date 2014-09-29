@@ -175,9 +175,24 @@ EOT;
 
     <h2>Daily Tools</h2>
     <article id="git">
+        <div id="gitcode" class="collapse">
+            <p>Make some changes, then...</p>
+<pre><code>git checkout -b myfeature
+        git commit -am "made changes"
+        git checkout master
+        git merge myfeature
+        git commit -am "myfeature complete"
+        git push bitbucket master</code></pre>
+            <p>login to remote server...</p>
+<pre><code>ssh myuser@mydomain.com
+        cd ~/path/to/project</code></pre>
+            <p>now pull from the repo</p>
+<pre><code>git fetch --all
+        git reset --hard origin/master</code></pre>
+        </div>
         <div class="trigger">
             <img class="img-responsive myimg" src="assets/img/Git-Logo-2Color.png" alt=""/>
-            <p class="text">Version Control</p>
+            <p class="text">Distributed Version Control</p>
         </div>
         <div class="article-content">
             <h3>git</h3>
@@ -194,21 +209,7 @@ EOT;
                 <li><a href="http://marklodato.github.io/visual-git-guide/index-en.html">http://marklodato.github.io/visual-git-guide/index-en.html</a></li>
             </ul>
 
-            <div id="gitcode" class="collapse">
-                <p>Make some changes, then...</p>
-<pre><code>git checkout -b myfeature
-        git commit -am "made changes"
-        git checkout master
-        git merge myfeature
-        git commit -am "myfeature complete"
-        git push bitbucket master</code></pre>
-            <p>login to remote server...</p>
-<pre><code>ssh myuser@mydomain.com
-        cd ~/path/to/project</code></pre>
-            <p>now pull from the repo</p>
-<pre><code>git fetch --all
-        git reset --hard origin/master</code></pre>
-            </div>
+
 
         </div>
     </article>
