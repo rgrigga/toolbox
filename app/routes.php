@@ -229,10 +229,59 @@ Route::get('admin',function(){
     return View::make('admin.index')->with(compact('users','sites','projects'));
 });
 
-//Route::any('{tag}',function($tag){
-//    App::abort(404);
-////    echo Redirect::intended('/');
-//});
+//////////
+// Docs //
+//////////
+
+Route::get('docs/pages/{tag}',function($tag){
+
+//    return View::make('docs.'.$tag,['title'=>$tag])
+//        ->nest('profile','user.partials.profile',compact('user'))
+//        ;
+
+    return View::make('docs.pages.'.$tag,['title'=>$tag])
+        ->nest('profile','user.partials.profile',compact('user'))
+        ;
+});
+Route::get('docs/{page}', 'DocsController@page');
+Route::get('docs', 'DocsController@index');
+
+
+
+    Route::post('search/{tag}',function($tag){
+        $input=Input::all();
+        $tag2=$input['tag'];
+        if(true){
+//            $user=Auth::user();
+            return Redirect::to('docs/pages/'.$tag2)->with('title',$tag2);
+
+
+        }
+        echo "BAM routes 233 ";
+        echo "search: ".$tag;
+        exit;
+    });
+
+    Route::get('search/{tag}',function($tag){
+    return View::make('site.pages.search',[
+        'tag'=>$tag,
+        'wordcount'=>0,
+        'postcount'=>0,
+        'pagecount'=>0,
+        'results'=>'none',
+    ])
+        ->with('heading','SEARCH STUFF')
+        ->nest('searchbox','site.partials.searchbox',['uri'=>$tag]);
+//    echo Redirect::intended('/');
+});
+
+Route::get('/{str}', function($str)
+{
+    $user=Auth::user();
+    return View::make('docs.pages.'.$str,['title'=>$str])
+        ->nest('profile','user.partials.profile',compact('user'))
+        ;
+});
 
 Route::get('/', function()
 {

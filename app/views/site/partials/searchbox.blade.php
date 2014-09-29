@@ -6,7 +6,7 @@
 <!-- Among other things, it does inject a hidden xss token -->
 
 <div class="searchbox">
-	{{ Form::open(array('url' => 'search')) }}
+	{{ Form::open(array('url' => 'search/search','method'=>'post')) }}
 <!-- http://laravel.com/docs/html#form-model-binding -->
 <!-- //echo Form::model($user, array('route' => array('user.update', $user->id))) -->
 	<div class="form-group">

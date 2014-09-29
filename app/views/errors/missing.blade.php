@@ -4,7 +4,7 @@
 
 <h2>Search:</h2>
 <p>Would you like to search for this?</p>
-<p class="bg-danger">Note: this will not actually work, it's just an early example of a custom 404 page.</p>
+<p class="bg-danger">Note: this search box will not actually work, it's just an early example of a custom 404 page.</p>
 <?php
 echo View::make('site.partials.searchbox',compact('uri'));
 ?>

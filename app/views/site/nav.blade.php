@@ -72,12 +72,7 @@ $prefix=(Auth::user())?Auth::user()->username . "@" : "";
 
             </ul>
             @if(Auth::check())
-            <form class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+            {{View::make('site.partials.searchbox',['uri'=>'search everywhere'])}}
             @endif
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

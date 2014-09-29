@@ -205,6 +205,7 @@ EOT;
 <pre><code>git fetch --all
         git reset --hard origin/master</code></pre>
             </div>
+
         </div>
     </article>
 
