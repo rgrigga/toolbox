@@ -1,6 +1,3 @@
-@extends('layouts.master')
-@section('content')
-
 <h1>System Documentation:</h1>
 <h2>{{$title}}</h2>
 <h3>Feature Branch Workflow</h3>
@@ -13,9 +10,7 @@
 <aside>
     Prezi is a stunning and amazing free tool.  5 Stars.
 </aside>
-@stop
 
-@section('sidebar')
 <h4>Quick Reference</h4>
 <pre><code>git checkout -b "bugfix"</code></pre>
 <pre><code>git commit -am "TB-123, TB-124 fixed bugs"</code></pre>
@@ -26,4 +21,3 @@
 <p>Repeat as needed</p>
 
 
-@stop

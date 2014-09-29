@@ -183,7 +183,9 @@ EOT;
             <h3>git</h3>
             <button class="btn pull-right" data-toggle="collapse" data-target="#gitcode"><i class="fa fa-code"></i> Code</button>
 
-            <p>Check this out:{{link_to('docs/pages/git')}}</p>
+            <p>Check this out:{{link_to('docs/pages/git')}}.  It's a presentation I've been working on.</p>
+            {{View::make('docs/pages/git',['title'=>'Git Docs'])->nest('profile','user.partials.profile',compact('user'))}}
+
 
             <p>here are a few good resources for git:</p>
             <ul>
