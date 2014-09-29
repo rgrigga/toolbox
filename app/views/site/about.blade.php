@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
 <h1>About Ryan</h1>
 <?php
 $email="ryan.grissinger@gmail.com";

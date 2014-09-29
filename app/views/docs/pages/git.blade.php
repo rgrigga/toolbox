@@ -11,7 +11,7 @@
 <p>If you have trouble viewing the embedded version, you can go the real thing here:</p>
 <a href="http://prezi.com/igioslmvhnyl/?utm_campaign=share&utm_medium=copy">Feature Branch Workflow Presentation</a>
 <aside>
-    Prezi is a stunning and tool.  5 Stars
+    Prezi is a stunning and amazing free tool.  5 Stars.
 </aside>
 @stop
 

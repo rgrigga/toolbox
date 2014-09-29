@@ -36,12 +36,12 @@ class HomeController extends BaseController {
 	}
     public function showAbout()
     {
-        $this->layout->navbar = View::make('site.nav');
-        $this->layout->footer = View::make('site.footer');
 
-        $user=User::where('username','ryan')->first();
+//        $user=User::where('username','ryan')->first();
+        $user=Auth::user();
         $this->layout->navbar = View::make('site.nav');
         $this->layout->content =  View::make('site.about')->nest('profile','user.profile',compact('user'));
+        $this->layout->footer = View::make('site.footer');
     }
     public function showContact()
     {

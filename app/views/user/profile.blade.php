@@ -2,14 +2,15 @@
 @section('content')
 <?php
 
-if(!Auth::check()){
 
-}else{
-
-}
 
 if(empty($user)){
-    $user=(Auth::user()) ? Auth::user() : null;
+    if(!Auth::check()){
+        $user=(Auth::user()) ? Auth::user() : null;
+//        $user=Auth::user();
+    }else{
+
+    }
 }else{ ?>
 <h1>{{$user->fullname()}}</h1>
 <p>last updated at: <mark>{{$user->updated_at}}</mark></p>
@@ -40,7 +41,7 @@ try{
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-6">
-            Your profile has not been set up.
+            Your profile has not been set up.  Your email is {{$email}}.
         </div>
     </div>
     <div class="row">

@@ -183,6 +183,8 @@ EOT;
             <h3>git</h3>
             <button class="btn pull-right" data-toggle="collapse" data-target="#gitcode"><i class="fa fa-code"></i> Code</button>
 
+            <p>Check this out:{{link_to('docs/pages/git')}}</p>
+
             <p>here are a few good resources for git:</p>
             <ul>
                 <li><a href="http://gitref.org/">http://gitref.org/</a></li>
