@@ -239,6 +239,7 @@ Route::get('docs/pages/{tag}',function($tag){
 //        ->nest('profile','user.partials.profile',compact('user'))
 //        ;
 
+
     return View::make('docs.pages.'.$tag,['title'=>$tag])
         ->nest('profile','user.partials.profile',compact('user'))
         ;

@@ -192,9 +192,24 @@ class UsersController extends Controller
         $repo = App::make('UserRepository');
         $input = Input::all();
 
+
         if ($repo->login($input)) {
-            return Redirect::intended('/');
+//            echo "SUCCESS";
+//            echo "<pre>";
+//            foreach(Session::all() as $key=>$value){
+//                echo $key.":";
+//                print_r($value);
+//                echo "<hr>";
+//            }
+//
+//            echo "</pre>";
+//
+//            exit;
+
+            return Redirect::to('home');
         } else {
+            echo "FAIL";
+            exit;
             if ($repo->isThrottled($input)) {
                 $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
             } elseif ($repo->existsButNotConfirmed($input)) {

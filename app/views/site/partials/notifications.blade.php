@@ -11,7 +11,7 @@
 <div class="bg-success">{{Session::get('msg')}}</div>
 <?php Session::forget('msg'); ?>
 @else
-<div class="bg-success"><code>site.partials.notifications</code></div>
+
 @endif
 
 @if(Session::get('message'))

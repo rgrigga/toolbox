@@ -240,7 +240,10 @@ EOT;
             <h3>JIRA</h3>
             <p>We use JIRA to track time, issues, and development sprints.  I'd say we have a roughly Agile workflow.  Our team is not big enough to necessitate all formal aspects of Agile, but what we do is "more agile than waterfall".</p>
             <p>I look forward to someday working with a larger team and learning more about how Agile and tools like JIRA can improve our workflow.</p>
-            <p>"JIRA is the tracker for teams planning and building great products. Thousands of teams choose JIRA to capture and organize issues, assign work, and follow team activity. At your desk or on the go with the new mobile interface, JIRA helps your team get the job done."</p>
+            <blockquote>
+                <p>"JIRA is the tracker for teams planning and building great products. Thousands of teams choose JIRA to capture and organize issues, assign work, and follow team activity. At your desk or on the go with the new mobile interface, JIRA helps your team get the job done."</p>
+                <p class="small">Atlassian</p>
+            </blockquote>
         </div>
     </article>
 

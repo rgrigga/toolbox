@@ -1,11 +1,10 @@
-<h1>System Documentation:</h1>
 <h2>{{$title}}</h2>
 <h3>Feature Branch Workflow</h3>
 <p>Here is a prezi I've been working on for an upcoming presentation:</p>
-<div class="embedded">
-    <iframe src="http://prezi.com/embed/igioslmvhnyl/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0" webkitAllowFullScreen mozAllowFullscreen allowfullscreen></iframe>
-</div>
-<p>If you have trouble viewing the embedded version, you can go the real thing here:</p>
+<!--<div class="embedded">-->
+<!--    <iframe src="http://prezi.com/embed/igioslmvhnyl/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0" webkitAllowFullScreen mozAllowFullscreen allowfullscreen></iframe>-->
+<!--</div>-->
+<!--<p>If you have trouble viewing the embedded version, you can go the real thing here:</p>-->
 <a href="http://prezi.com/igioslmvhnyl/?utm_campaign=share&utm_medium=copy">Feature Branch Workflow Presentation</a>
 <aside>
     Prezi is a stunning and amazing free tool.  5 Stars.
@@ -19,5 +18,13 @@
 <pre><code>git pull origin dev</code></pre>
 <pre><code>git push origin dev</code></pre>
 <p>Repeat as needed</p>
-
-
+<img src="{{asset('assets/img/gitmerging.png')}}" alt=""/>
+<h5>Merge a single file</h5>
+<pre><code>git log reports-sampling.php</code></pre>
+<p>Or:</p>
+<pre><code>gitk path/to/file</code></pre>
+<p>Or look in bitbucket</p>
+<a href="http://stackoverflow.com/questions/2733873/reverting-a-single-file-to-a-previous-version-in-git">http://stackoverflow.com/questions/2733873/reverting-a-single-file-to-a-previous-version-in-git</a>
+<p>Take your hash, like this: <code>6b92c69</code></p>
+now do this:
+<pre><code></code></pre>
