@@ -18,8 +18,6 @@ class Company extends Eloquent implements PresentableInterface{
 	        return new CompanyPresenter($this);
 	    }
 
-
-
 	public function logo($option=null)
 	
 	{
@@ -31,6 +29,10 @@ class Company extends Eloquent implements PresentableInterface{
 		}
 		// return "BAM BAM";
 		$asset=asset('assets/'.strtolower($this->brand).'/'.$this->image);
+
+        if($option=='url'){
+            return $asset;
+        }
 		return "<img class='logo img-responsive ".$myclass."' src='".$asset."' alt='".$this->brand."'>";
 	// <img class="img-responsive img-center" src="{{asset('packages/rgrigga/'.strtolower($company->brand).'/logo.png')}}" alt="{{$company->brand}}">
 
