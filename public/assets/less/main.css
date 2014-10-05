@@ -6455,3 +6455,32 @@ table.table-bordered {
   margin-left: -15px;
   margin-right: -15px;
 }
+.myform li {
+  list-style: none;
+}
+.myform .form-group label {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .myform .form-group label {
+    float: left;
+    width: 16.666666666666664%;
+  }
+}
+.myform .form-group input,
+.myform .form-group textarea {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .myform .form-group input,
+  .myform .form-group textarea {
+    float: left;
+    width: 75%;
+  }
+}
