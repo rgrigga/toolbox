@@ -187,10 +187,11 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
     Route::post('users/{user}/edit', ['as'=>'admin.users.update','uses'=>'Admin2UsersController@postEdit'])
         ->where('user', '[0-9]+');
 
-    Route::get('users/{user}/delete', ['as'=>'users.destroy','uses'=>'AdminUsersController@getDelete'])
-        ->where('user', '[0-9]+');
-    Route::post('users/{user}/delete', 'AdminUsersController@postDelete')
-        ->where('user', '[0-9]+');
+//    Route::get('users/{user}/delete', ['as'=>'users.destroy','uses'=>'AdminUsersController@getDelete'])
+//        ->where('user', '[0-9]+');
+//    Route::post('users/{user}/delete', 'AdminUsersController@destroy')
+//        ->where('user', '[0-9]+');
+
     Route::controller('users', 'AdminUsersController');
 
 

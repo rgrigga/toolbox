@@ -232,6 +232,7 @@ class AdminUsersController extends AdminController {
      */
     public function getDelete($user)
     {
+
         // Show the page
         return View::make('user/delete', compact('user'));
     }
@@ -269,9 +270,24 @@ class AdminUsersController extends AdminController {
             return Redirect::to('admin/users')->with('error', Lang::get('admin/users/messages.delete.error'));
         }
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        echo "Controller Destroy";
+
+//        $this->user->find($id)->delete();
+//        return Redirect::route('admin.users.index');
+    }
+
     public function missingMethod($parameters = array())
     {
-        echo "BAM";
+        echo "Controller Missing Method:";
         dd($parameters);
         //
     }

@@ -2,6 +2,15 @@
 
 @section('content')
 
+@if(!in_array($user->username,['admin','demo']))
+<div class="alert alert-danger">
+    <p class="pull-right">Danger!  This button will obliterate this user and all of its resources.</p>
+    {{ Form::open(array('method' => 'DELETE', 'route' => array('users.destroy', $user->id))) }}
+    {{ Form::submit('Delete User', array('class'=> 'btn btn-danger deleteBtn')) }}
+    {{ Form::close() }}
+</div>
+@endif
+
 <h1>Edit User</h1>
 <h2>msg:</h2>
 @if(isset($success))

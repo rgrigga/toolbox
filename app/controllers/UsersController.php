@@ -336,4 +336,24 @@ class UsersController extends Controller
         return  View::make('user.profile')->with(compact($user));
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+
+        $target=$this->user->find($id);
+        if($target->username == 'admin'){
+            Session::flash('error','you can\'t do that!');
+        }else{
+            $target->delete();
+            Session::flash('it is done!');
+        }
+
+        return Redirect::route('users.index');
+    }
+
 }

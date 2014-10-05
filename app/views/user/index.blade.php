@@ -15,6 +15,7 @@
                 <th>Email</th>
                 <th>Roles</th>
                 <th>Confirmed</th>
+                <th>Projects</th>
                 <th>Actions</th>
 			</tr>
 		</thead>
@@ -27,13 +28,11 @@
                     <td>{{$user->email}}</td>
                     <td>{{implode(',',$user->roles()->lists('name'))}}</td>
                     <td>{{($user->confirmed)?"Yes":"No"}}</td>
+                    <td>{{count($user->projects)}}</td>
                     <td>
                         <p>
                             {{ link_to_route('users.edit', 'Edit',$user->id) }}
-                       |
-                            {{ link_to_route('users.destroy', 'Delete',$user->id) }}
                         </p>
-
                     </td>
                 </tr>
 			@endforeach
