@@ -31,43 +31,43 @@
             <ul>
                 <li>
                     {{ Form::label('brand', 'Brand:') }}
-                    {{ Form::text('brand') }}
+                    {{ Form::text('brand',null,['placeholder'=>'megacorp']) }}
                 </li>
 
                 <li>
                     {{ Form::label('name', 'Name:') }}
-                    {{ Form::text('name') }}
+                    {{ Form::text('name',null,['placeholder'=>'The Mega Corporation']) }}
                 </li>
 
                 <li>
                     {{ Form::label('phone', 'Phone:') }}
-                    {{ Form::text('phone') }}
+                    {{ Form::text('phone',null,['placeholder'=>'614.555.1212']) }}
                 </li>
 
                 <li>
                     {{ Form::label('email', 'Email:') }}
-                    {{ Form::text('email') }}
+                    {{ Form::text('email',null,['placeholder'=>'megacorp@gmail.com']) }}
                 </li>
 
                 <li>
                     {{ Form::label('description', 'Description:') }}
-                    {{ Form::textarea('description') }}
+                    {{ Form::textarea('description',null,['placeholder'=>'Megacorp is awesome.']) }}
                 </li>
 
                 <li>
                     {{ Form::label('slogan', 'Slogan:') }}
-                    {{ Form::text('slogan') }}
+                    {{ Form::text('slogan',null,['placeholder'=>'Megacorp Rocks!']) }}
                 </li>
 
 
                 <li>
                     <span>coming soon: avatar</span>
                     {{--Form::label('avatar','Logo:')--}}
-                    {{--Form::file('avatar')--}}                    
+                    {{--Form::file('avatar',null,['placeholder'=>'megacorp.png'])--}}
                 </li>
                 <li>
                     {{ Form::label('menus', 'Menus:') }}
-                    {{ Form::text('menus') }}
+                    {{ Form::text('menus',null,['placeholder'=>'about,demo,help']) }}
                 </li>
 
 
