@@ -8,6 +8,9 @@ if (window.jQuery) {
 
 $('document').ready(function(){
 
+    $('body').on('click','.deleteBtn',function(){
+        return confirm("Are you sure?");
+    });
     $('#kitt-container').hide();
 
     $('.trigger').on('mouseenter',function(){

@@ -29,6 +29,7 @@
 
     <ul class="myform">
         <li>
+            <p>This will be used alot, use a small simple word. Consider using the root name of your domain.</p>
             <div class="form-group">
                 {{ Form::label('brand', 'Brand:') }}
                 {{ Form::text('brand',null,['placeholder'=>'megacorp']) }}
@@ -65,10 +66,15 @@
             </div>
         </li>
         <li>
+            <p>
+                <span>coming soon: automatic folders and image uploads.  For now, enter the filename, which needs to be manually placed like this: <code>public/assets/yourcompany/mylogo.png</code></span>
+            </p>
             <div class="form-group">
-                <span>coming soon: avatar</span>
                 {{--Form::label('avatar','Logo:')--}}
                 {{--Form::file('avatar',null,['placeholder'=>'megacorp.png'])--}}
+                    {{ Form::label('image', 'Image:') }}
+                {{ Form::text('image',null,['placeholder'=>'sunset.png']) }}
+
             </div>
         </li>
         <li>

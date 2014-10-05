@@ -61,7 +61,6 @@
 
                 {{ link_to_route('companies.show', 'Show', array($mycompany->id), array('class' => 'btn btn-info btn-mini')) }}
                 {{ link_to_route('companies.edit', 'Edit', array($mycompany->id), array('class' => 'btn btn-info btn-mini')) }}
-                {{ link_to_route('companies.destroy', 'Delete', array($mycompany->id), array('class' => 'btn btn-danger btn-mini')) }}
                 <h3>{{{ $mycompany->id }}}: {{{ $mycompany->name }}}</h3>
                 {{View::make('site.partials.contact');}}
                 <p>{{{ $mycompany->brand }}}</p>
@@ -70,11 +69,15 @@
 
                 <p>{{{ $mycompany->phone }}}</p>
                 <p>{{{ $mycompany->email }}}</p>
+                <div class="alert alert-danger">
+                    <p class="pull-right">Danger!  You will obliterate this company and all of its resources.</p>
+                    {{ Form::open(array('method' => 'DELETE', 'route' => array('companies.destroy', $mycompany->id))) }}
+                    {{ Form::submit('Delete', array('class'=> 'btn btn-danger deleteBtn')) }}
+                    {{ Form::close() }}
+                </div>
                 
 
-                {{ Form::open(array('method' => 'DELETE', 'route' => array('companies.destroy', $mycompany->id))) }}
-                {{-- Form::submit('Delete', array('class'=> 'btn btn-danger')) --}}
-                {{ Form::close() }}
+
             </div>
 
 
