@@ -346,7 +346,7 @@ class UsersController extends Controller
     {
 
         $target=$this->user->find($id);
-        if($target->username == 'admin'){
+        if(in_array($target->username,['admin','demo'])){
             Session::flash('error','you can\'t do that!');
         }else{
             $target->delete();
