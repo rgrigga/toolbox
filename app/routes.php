@@ -74,7 +74,7 @@ Route::model('permission','Permission');
 Route::model('project','Project');
 
 
-Entrust::routeNeedsRole( 'users*', ['Administrator','Contributor'] );
+Entrust::routeNeedsRole( 'users/delete*', ['Administrator','Contributor'] );
 
 Route::resource('permissions', 'AdminPermissionsController');
 Route::resource('projects', 'ProjectsController');

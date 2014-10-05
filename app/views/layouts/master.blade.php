@@ -125,7 +125,7 @@ if(!$imgUrl=$company->logo('url')){
     </div>
 </div>
 
-@yield('bouncer')
+@yield('nobouncer')
 
 
 <!--<code>layouts.master</code>-->
@@ -134,6 +134,9 @@ if(!$imgUrl=$company->logo('url')){
     <div class="footer-wrap">
         <!--    <code>.footer</code>-->
         @section('footer')
+        @if(Auth::check())
+        @include('dev.envbadges')
+        @endif;
         <p><a href="http://rgrigga.github.io/toolbox">http://rgrigga.github.io/toolbox</a></p>
         <p class="muted small">&copy; 2014 {{App::make('company')->brand;}}</p>
         <p><?= link_to_route('admin.index','Admin') ?></p>

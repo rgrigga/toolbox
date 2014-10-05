@@ -1,4 +1,3 @@
-/Code/login/app/views/projects/edit.blade.php
 @extends('layouts.master')
 
 @section('content')

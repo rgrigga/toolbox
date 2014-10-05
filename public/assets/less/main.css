@@ -5908,7 +5908,9 @@ aside:after,
 #test-wrapper .makerow:before,
 #test-wrapper .makerow:after,
 .footer-wrap:before,
-.footer-wrap:after {
+.footer-wrap:after,
+.envbadges:before,
+.envbadges:after {
   content: " ";
   display: table;
 }
@@ -5931,7 +5933,8 @@ article:after,
 aside:after,
 #loginform:after,
 #test-wrapper .makerow:after,
-.footer-wrap:after {
+.footer-wrap:after,
+.envbadges:after {
   clear: both;
 }
 .center-block {
@@ -6483,4 +6486,28 @@ table.table-bordered {
     float: left;
     width: 75%;
   }
+}
+.envbadges {
+  margin-left: -15px;
+  margin-right: -15px;
+  background-color: black;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  z-index: 9999;
+  padding-left: 10px;
+  border: 2px solid black;
+}
+.envbadges .badge {
+  display: inherit;
+}
+.badgerow {
+  display: inline-block;
+  /*border: 2px solid black;*/
+  padding: 5px;
+  text-align: center;
+}
+.badgerow h4 {
+  font-size: small;
+  margin: 0 auto;
 }

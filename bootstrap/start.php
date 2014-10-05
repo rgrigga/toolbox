@@ -30,6 +30,8 @@ $env = $app->detectEnvironment(array(
 
 ));
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Bind Paths
@@ -69,5 +71,11 @@ require $framework.'/Illuminate/Foundation/start.php';
 | from the actual running of the application and sending responses.
 |
 */
+
+require_once($app['path.base'].'/app/helpers/htmlHelpers.php');
+define('ENVIRONMENT',App::environment());
+define('BRANCH',`git rev-parse --abbrev-ref HEAD`);
+define('COMMIT',`git rev-parse --short HEAD`);
+define('TAG',`git describe --abbrev=0 --tags`);
 
 return $app;
