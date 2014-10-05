@@ -73,6 +73,9 @@ Route::model('role','Role');
 Route::model('permission','Permission');
 Route::model('project','Project');
 
+
+Entrust::routeNeedsRole( 'users*', ['Administrator','Contributor'] );
+
 Route::resource('permissions', 'AdminPermissionsController');
 Route::resource('projects', 'ProjectsController');
 Route::resource('screenshots', 'ScreenshotsController');
