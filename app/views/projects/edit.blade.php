@@ -2,7 +2,12 @@
 @extends('layouts.master')
 
 @section('content')
-
+<div class="alert alert-danger">
+    <p class="pull-right">Danger!  This button will obliterate this project and all of its resources.</p>
+    {{ Form::open(array('method' => 'DELETE', 'route' => array('projects.destroy', $project->id))) }}
+    {{ Form::submit('Delete Project', array('class'=> 'btn btn-danger deleteBtn')) }}
+    {{ Form::close() }}
+</div>
 <h1>Edit Project</h1>
 {{ Form::model($project, array('method' => 'PATCH','files'=>true, 'route' => array('projects.update', $project->id))) }}
 
