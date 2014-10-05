@@ -44,7 +44,7 @@
         <?php
         h4("tag");
         $tag=TAG;
-        badge(!empty($tag)?:"none",'warning');
+        badge(!empty($tag)?$tag:"none",'warning');
         ?>
     </div>
 </div>

@@ -124,13 +124,17 @@ This is the master navbar.
 </div>
 
 @section('sidebar')
-
+@if(Auth::check() && Auth::user()->hasRole('Administrator'))
+@include('dev.envbadges')
+@endif
 @show
 
 <!--<code>layouts.master</code>-->
 
 <div class="footer container">
     @section('footer')
+
+
 
         <code>.footer</code>
         <p><a href="http://rgrigga.github.io/toolbox">http://rgrigga.github.io/toolbox</a></p>

@@ -5902,7 +5902,9 @@ button.close {
 article:before,
 article:after,
 aside:before,
-aside:after {
+aside:after,
+.envbadges:before,
+.envbadges:after {
   content: " ";
   display: table;
 }
@@ -5922,7 +5924,8 @@ aside:after {
 .panel-body:after,
 .modal-footer:after,
 article:after,
-aside:after {
+aside:after,
+.envbadges:after {
   clear: both;
 }
 .center-block {
@@ -6284,3 +6287,27 @@ ul.nav li.nav-item a {
 /* visited link */
 /* mouse over link */
 /* selected link */
+.envbadges {
+  margin-left: -15px;
+  margin-right: -15px;
+  background-color: black;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  z-index: 9999;
+  padding-left: 10px;
+  border: 2px solid black;
+}
+.envbadges .badge {
+  display: inherit;
+}
+.badgerow {
+  display: inline-block;
+  /*border: 2px solid black;*/
+  padding: 5px;
+  text-align: center;
+}
+.badgerow h4 {
+  font-size: small;
+  margin: 0 auto;
+}

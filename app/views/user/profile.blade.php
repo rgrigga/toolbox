@@ -8,11 +8,14 @@ if(empty($user)){
     if(!Auth::check()){
         $user=(Auth::user()) ? Auth::user() : null;
 //        $user=Auth::user();
-    }else{
+        h1('You are not signed in.');
 
+    }else{
+        h1('You are signed in.');
+        h1($user->fullname());
     }
 }else{ ?>
-<h1>{{$user->fullname()}}</h1>
+
 <p>last updated at: <mark>{{$user->updated_at}}</mark></p>
 
 <?php
@@ -41,18 +44,25 @@ try{
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-6">
-            Your profile has not been set up.  Your email is {{$email}}.
+            <h2>Local</h2>
+            <p>Edit your user directly:</p>
+            {{ link_to_route('users.edit', 'Edit Profile',$user->id,['class'=>'btn btn-lg btn-primary']) }}
+            <p>But before you do... you should consider a gravatar:</p>
         </div>
     </div>
     <div class="row">
-        <div>
-            <a href="http://en.gravatar.com/profiles/edit/#about-you" class="btn btn-lg btn-primary">Create Your Profile</a>
+        <div class="col-xs-12 col-sm-3 col-md-6">
+            <h2>Gravatar</h2>
+            <p>The gravatar profile for <code>{{$email}}</code> has not been set up.</p>
+            <p>If you take a moment to set up your gravatar, You can use it here, and all over the web.</p>
+            <a href="http://en.gravatar.com/profiles/edit/#about-you" class="btn btn-lg btn-primary">Create Gravatar</a>
         </div>
     </div>
 </div>
 @else
 <?php
 $profile=unserialize($str);
+
 $location=(array_key_exists('currentLocation',$profile['entry']['0']))?
     $profile['entry']['0']['currentLocation']:"";
 

@@ -96,7 +96,6 @@ if(!$imgUrl=$company->logo('url')){
 
 @section('admin-nav')
 @if(Auth::check() && Auth::user()->hasRole('Administrator'))
-<code>admin-nav</code>
 @include('admin.nav')
 @endif
 
@@ -134,9 +133,9 @@ if(!$imgUrl=$company->logo('url')){
     <div class="footer-wrap">
         <!--    <code>.footer</code>-->
         @section('footer')
-        @if(Auth::check())
+        @if(Auth::check() && Auth::user()->hasRole('Administrator'))
         @include('dev.envbadges')
-        @endif;
+        @endif
         <p><a href="http://rgrigga.github.io/toolbox">http://rgrigga.github.io/toolbox</a></p>
         <p class="muted small">&copy; 2014 {{App::make('company')->brand;}}</p>
         <p><?= link_to_route('admin.index','Admin') ?></p>

@@ -333,7 +333,7 @@ class UsersController extends Controller
         if(empty($user)){
             $user=App::make('User');
         }
-        return  View::make('user.profile')->with(compact($user));
+        return  View::make('user.profile')->with(compact('user'));
     }
 
     /**
