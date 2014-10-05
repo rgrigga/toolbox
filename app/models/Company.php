@@ -28,12 +28,27 @@ class Company extends Eloquent implements PresentableInterface{
 			$myclass=$option;
 		}
 		// return "BAM BAM";
-		$asset=asset('assets/'.strtolower($this->brand).'/'.$this->image);
+        $minipath='assets/'.strtolower($this->brand).'/'.$this->image;
+
+        if(File::exists($minipath)){
+            $asset=asset($minipath);
+        }else{
+            $asset=asset('assets/img/Five_petal_flower_icon.svg');
+        }
+
 
         if($option=='url'){
+//            echo $minipath;
+//            echo "<hr>";
+//            echo $asset;
+
+
             return $asset;
         }
-		return "<img class='logo img-responsive ".$myclass."' src='".$asset."' alt='".$this->brand."'>";
+
+
+        return "<img class='logo img-responsive ".$myclass."' src='".$asset."' alt='".$this->brand."'>";
+
 	// <img class="img-responsive img-center" src="{{asset('packages/rgrigga/'.strtolower($company->brand).'/logo.png')}}" alt="{{$company->brand}}">
 
 	}	

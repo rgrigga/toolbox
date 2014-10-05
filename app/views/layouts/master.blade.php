@@ -76,8 +76,10 @@ try{
     $background = $default;
     $str="";
 }
-//$imgUrl=asset('assets/img/Five_petal_flower_icon.svg');
-$imgUrl=$default;
+if(!$imgUrl=$company->logo('url')){
+    $imgUrl=asset('assets/img/Five_petal_flower_icon.svg');
+}
+//$imgUrl=$default;
 ?>
 <style>
     body{
