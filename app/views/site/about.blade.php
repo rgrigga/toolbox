@@ -19,6 +19,13 @@ $grav="http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) )
             <img src="{{$grav}}" alt="" class="img-responsive img-circle"/>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="sidenote">
+                <a class="btn btn-info" href="https://docs.google.com/document/d/1cr2syXbro8BVLGoGWavJ-3Uw7w2xwGtNOZKSt6Uwz_Q/edit?usp=sharing">Resume</a>
+            </div>
+        </div>
+    </div>
 </div>
 @stop
 

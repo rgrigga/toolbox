@@ -1,4 +1,5 @@
 <?php
+
 Route::pattern('id', '[0-9]+');
 //Route::matched(function($route, $request)
 //{
@@ -17,13 +18,13 @@ Route::pattern('id', '[0-9]+');
 */
 
 
-
 App::bind('company',function($app){
     return Company::where('name','like','gristech')->first();
 });
 App::bind('gristech',function($app){
     return Company::where('name','like','gristech')->first();
 });
+
 
 View::share('company',Company::where('name','like','gristech')->first());
 
@@ -216,7 +217,7 @@ Route::any('{tag}',function($tag){
     ?>
     <script type="text/JavaScript">
         <!--
-        setTimeout("location.href = 'http://login.dev';",1500);
+        setTimeout("location.href = 'http://toolbox.gristech.com';",1500);
         -->
     </script>
     <?php
@@ -224,14 +225,12 @@ Route::any('{tag}',function($tag){
     echo "<br>";
     echo Redirect::intended('home');
 
-
-
 });
 
 Route::get('/', function()
 {
     $user=Auth::user();
-    return View::make('site.index')
+    return View::make('site.index');
 //        ->nest('profile','user.profile',compact('user'))
-        ;
+//        ;
 });

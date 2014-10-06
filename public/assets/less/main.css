@@ -6309,10 +6309,17 @@ img.thumb-lg {
 body > .container {
   padding-top: 60px;
 }
+.navbar-nav > li > .dropdown-menu {
+  z-index: 9999;
+}
+#primarynav {
+  z-index: 1031;
+}
 .navbar-secondary {
   background-color: black;
   margin-top: 50px;
   color: #ecf0f1;
+  z-index: 1030;
 }
 .navbar-secondary ul.nav li.nav-item {
   /* unvisited link */

@@ -3,6 +3,7 @@
 <div class="container">
 
 <header>
+
     <h1>My Development Stack</h1>
     <p>I think of development as a <strong>craft</strong>.</p>
     <p>A "Craft" is like an "Art", but art makes us think of things like paintings.  The focus is generally on the aesthetic side of things.  It could be argued that the intent of such aesthetics on the business side is to attract customers and/or otherwise delight users.  There is certainly an artistic aspect to web development (or any development, for that matter).</p>
@@ -10,6 +11,7 @@
     <p>Crafts also require <strong>specific knowledge</strong>.  Any kid can splash paint on paper and call it art, but a fine handcrafted piece of heirloom quality furniture can only be made by someone with the very best tools and a good deal of experience and knowhow.</p>
     <p>Development is <strong>hard</strong>.  It's a worthwhile pursuit, though, and it's a great blend of problem-solving, artistic inclination, analytical thinking, and detailed knowledge of a variety of tools and languages.</p>
     <p>Below is a description of the tools I enjoy using today:</p>
+
 </header>
 <hr/>
 

@@ -18,7 +18,7 @@
     @endforeach
 </ul>
 
-<h2>{{ link_to('companies.index', 'Companies') }}</h2>
+<h2>{{ link_to_route('companies.index', 'Companies') }}</h2>
 
 {{ link_to('admin/companies/create', 'Add One') }}
 <ul>

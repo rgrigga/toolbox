@@ -9,21 +9,21 @@ function rand_md5($length) {
 }
 
 ?>
-<h1>Security issue:</h1>
-<h2>Please change this in: <?=__FILE__?></h2>
-instead of
-<pre><code>
-        'key' => 'YourSecretKey!!!',
-</code></pre>
-<p>Use this:</p>
-<pre><code>
-        'key' => '<?= rand_md5('32') ?>',
-</code></pre>
+<!--<h1>Security issue:</h1>-->
+<!--<h2>Please change this in: --><?//=__FILE__?><!--</h2>-->
+<!--near line 105. Instead of-->
+<!--<pre><code>-->
+<!--        'key' => 'YourSecretKey!!!',-->
+<!--</code></pre>-->
+<!--<p>Use this:</p>-->
+<!--<pre><code>-->
+<!--        'key' => '--><?//= rand_md5('32') ?><!--',-->
+<!--</code></pre>-->
 
 <?php
 //you should set this, then you can comment out or delete from the exit up:
 //echo rand_md5('32');
-exit;
+//exit;
 return array(
 
 	/*
@@ -102,7 +102,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => '03e0d3156a5f8f575ea4adf646d4fded',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 

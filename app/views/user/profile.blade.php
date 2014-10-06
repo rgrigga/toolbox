@@ -76,6 +76,9 @@ $familyName=(array_key_exists('familyName',$profile['entry']['0']['name']))?
             </div>
         </div>
     </div>
+    <div class="sidenote">
+        <a class="btn btn-info" href="https://docs.google.com/document/d/1cr2syXbro8BVLGoGWavJ-3Uw7w2xwGtNOZKSt6Uwz_Q/edit?usp=sharing">Resume</a>
+    </div>
 </div>
 
 

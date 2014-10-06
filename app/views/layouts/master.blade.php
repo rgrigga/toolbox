@@ -50,7 +50,9 @@ if(Route::currentRouteName()=='about'){
     }
 }
 
-$default="http://lorempixel.com/800/800/business";
+//$default="http://lorempixel.com/800/800/business";
+$default="http://toolbox.gristech.com/img/lightning.jpg";
+
 $size=800;
 $hash=md5( strtolower( trim( $email ) ) );
 $grav="http://www.gravatar.com/avatar/" . $hash
@@ -85,7 +87,6 @@ $imgUrl=$default;
         -o-background-size: cover;
         background-size: cover;
     }
-
 </style>
 @section('navbar')
 @include('site.nav')
@@ -101,6 +102,7 @@ $imgUrl=$default;
 
 @show
 <div id="body-wrap" class="container">
+    imgurl:{{$imgUrl}}
     @include('site.partials.notifications')
 
     <main>

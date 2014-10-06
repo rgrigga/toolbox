@@ -22,8 +22,8 @@
 @endif
 
 @if(Session::get('danger'))
-<div class="alert alert-danger">Error{{Session::get('danger')}}</div>
+<div class="alert alert-danger">Error: {{Session::get('danger')}}</div>
 @endif
 @if(Session::get('error'))
-<div class="alert alert-danger">Error{{Session::get('error')}}</div>
+<div class="alert alert-danger">Error: {{Session::get('error')}}</div>
 @endif
